@@ -1302,6 +1302,243 @@ footer {
   opacity: 0.7;
 }
 
+/* ========================================
+   AREAS OF FOCUS — HERO
+   ======================================== */
+
+.focus-hero {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 520px;
+  padding: 100px 80px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--deep-blue);
+  color: var(--off-white);
+}
+
+.focus-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 55%;
+  max-width: 720px;
+}
+
+.focus-hero h1 {
+  margin: 0;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 4.5rem;
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--off-white);
+}
+
+.focus-intro {
+  max-width: 580px;
+  margin-top: 32px;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+
+  color: var(--off-white);
+}
+
+.focus-hero-network {
+-webkit-mask-image: linear-gradient(to right, transparent 0%, black 18%, black 100%);
+mask-image: linear-gradient(to right, transparent 0%, black 18%, black 100%);
+  
+position: absolute;
+  top: 50%;
+  right: 8%;
+
+  width: 70%;
+  max-width: 900px;
+  height: auto;
+
+  transform: translateY(-50%);
+
+  opacity: 0.65;
+  z-index: 1;
+}
+/* ========================================
+   AREAS OF FOCUS — FOCUS GRID
+   ======================================== */
+
+.focus-areas {
+  padding: 110px 8%;
+  background: #f7f9fb;
+}
+
+.focus-grid {
+  position: relative;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 70px 100px;
+}
+
+.focus-card {
+  position: relative;
+  padding: 35px 40px 40px;
+
+  border-top: 1px solid rgba(31, 183, 214, 0.55);
+}
+
+.focus-number {
+  display: block;
+  margin-bottom: 20px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+
+  color: #1fb7d6;
+}
+
+.focus-card h2 {
+  margin: 0 0 22px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.15;
+
+  color: #15395b;
+}
+
+.focus-card p {
+  max-width: 470px;
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: #435466;
+}
+
+/* Small network node attached to each focus area */
+
+.focus-card::before {
+  content: "";
+
+  position: absolute;
+  top: -6px;
+  left: 0;
+
+  width: 11px;
+  height: 11px;
+
+  border: 2px solid #1fb7d6;
+  border-radius: 50%;
+  background: #f7f9fb;
+}
+.focus-card::after {
+  content: "";
+
+  position: absolute;
+  top: -4px;
+  right: 22%;
+
+  width: 7px;
+  height: 7px;
+
+  border: 1.5px solid #1fb7d6;
+  border-radius: 50%;
+  background: #f7f9fb;
+}
+/* ========================================
+   AREAS OF FOCUS — SYSTEMS SECTION
+   ======================================== */
+
+.focus-systems {
+  position: relative;
+  overflow: hidden;
+
+  min-height: 520px;
+  padding: 90px 80px;
+
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 60px;
+  align-items: center;
+
+  background-color: var(--ice-blue);
+  color: var(--navy);
+}
+
+.focus-systems-copy {
+  position: relative;
+  z-index: 2;
+}
+
+.focus-systems h2 {
+  margin: 0 0 28px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+  line-height: 1.15;
+
+  color: var(--navy);
+}
+
+.focus-systems p {
+  max-width: 560px;
+  margin: 0 0 20px;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+
+  color: var(--slate);
+}
+
+.focus-systems-highlight {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.35rem !important;
+  font-weight: 700;
+
+  color: var(--cyan) !important;
+}
+
+.focus-systems-visual {
+  position: relative;
+  min-height: 380px;
+}
+
+.focus-systems-visual img {
+  position: absolute;
+  top: 50%;
+  right: -6%;
+
+  width: 115%;
+  max-width: 720px;
+  height: auto;
+
+  transform: translateY(-50%);
+
+  opacity: 0.28;
+
+  -webkit-mask-image: radial-gradient(
+    circle at center,
+    black 55%,
+    transparent 100%
+  );
+
+  mask-image: radial-gradient(
+    circle at center,
+    black 55%,
+    transparent 100%
+  );
+}
 
 /* ========================================
    RESPONSIVE — SMALL DESKTOP / TABLET
@@ -1363,7 +1600,76 @@ footer {
 
     padding: 70px 32px;
   }
+  focus-hero {
+  min-height: auto;
+  padding: 80px 32px;
+  display: block;
+}
 
+.focus-hero-content {
+  width: 100%;
+  max-width: 620px;
+}
+
+.focus-hero h1 {
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  line-height: 1.05;
+}
+
+.focus-intro {
+  max-width: 560px;
+}
+
+.focus-hero-network {
+  position: absolute;
+  top: auto;
+  right: -120px;
+  bottom: 40px;
+
+  width: 520px;
+  max-width: none;
+
+  transform: none;
+
+  opacity: 0.22;
+}
+
+.focus-grid {
+  grid-template-columns: 1fr;
+  gap: 56px;
+}
+
+.focus-card {
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+.focus-systems {
+  min-height: auto;
+  padding: 70px 32px;
+
+  grid-template-columns: 1fr;
+  gap: 30px;
+}
+
+.focus-systems-visual {
+  min-height: 300px;
+}
+
+.focus-systems-visual img {
+  position: relative;
+  top: auto;
+  right: auto;
+
+  width: 100%;
+  max-width: 520px;
+
+  margin: 0 auto;
+  display: block;
+
+  transform: none;
+}
 
   /* ABOUT HERO */
 
@@ -1487,6 +1793,8 @@ footer {
   }
 }
 
+/* AREAS OF FOCUS — TABLET / MOBILE */
+
 
 /* ========================================
    RESPONSIVE — PHONE
@@ -1587,4 +1895,42 @@ footer {
     width: 40px;
     height: 40px;
   }
+  /* AREAS OF FOCUS — PHONE */
+
+.focus-hero,
+.focus-areas,
+.focus-systems {
+  padding-left: 22px;
+  padding-right: 22px;
+}
+
+.focus-hero h1 {
+  font-size: 2.8rem;
+}
+
+.focus-hero-network {
+  right: -180px;
+  bottom: 60px;
+
+  width: 500px;
+
+  opacity: 0.14;
+}
+
+.focus-card {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.focus-card h2 {
+  font-size: 1.8rem;
+}
+
+.focus-systems h2 {
+  font-size: 2.2rem;
+}
+
+.focus-systems-visual {
+  min-height: 240px;
+}
 }
