@@ -1227,79 +1227,174 @@ main section p {
    FOOTER
    ======================================== */
 
-footer {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
+.site-footer {
+  width: 100%;
 
-  padding: 48px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1.25fr 1.5fr;
+  gap: 48px;
+  align-items: start;
 
-  background-color: var(--deep-blue);
+  padding: 50px 70px 30px;
+
+  background-color: var(--navy);
   color: var(--off-white);
 }
 
-.footer-contact {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 16px;
+
+/* BRAND */
+
+.footer-brand-column {
+  min-width: 0;
+}
+.footer-logo {
+  display: inline-block;
+  margin-bottom: 18px;
 }
 
-.footer-brand p:first-child {
+.footer-logo img {
+  display: block;
+  width: 350px;
+  height: auto;
+  max-width: 100%;
+}
+.footer-brand-name {
   margin: 0 0 8px;
 
   font-family: 'Genos', sans-serif;
-  font-size: 1.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
   letter-spacing: 0.08em;
+
+  color: var(--off-white);
 }
 
-.footer-brand p:last-child {
+.footer-tagline {
+  max-width: 260px;
   margin: 0;
 
-  font-size: 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  color: var(--ice-blue);
 }
 
-.footer-email {
-  font-family: 'Nunito', sans-serif;
-  font-size: 0.95rem;
 
-  color: var(--cyan);
+/* CONTACT */
+
+.footer-contact-column {
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  padding-top: 125px;
+}
+
+.footer-contact-item {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  font-size: 1.5rem;
+
+  color: var(--off-white);
   text-decoration: none;
 }
 
-.footer-email:hover {
-  text-decoration: underline;
+.footer-contact-item:hover {
+  color: var(--cyan);
 }
 
-.footer-socials {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.footer-socials img {
+.footer-contact-item img {
   display: block;
 
-  width: 48px;
-  height: 48px;
+  width: 36px;
+  height: 36px;
+  max-width: 36px;
+
+  flex: 0 0 36px;
 
   object-fit: contain;
 }
 
-.footer-newsletter iframe {
-  display: block;
-  max-width: 100%;
+.footer-contact-icon {
+  width: 36px;
+
+  flex: 0 0 36px;
+
+  font-size: 1.5rem;
+  text-align: center;
+
+  color: var(--cyan);
 }
 
+
+/* PUBLICATION */
+
+.footer-publication-column {
+  min-width: 0;
+
+  padding-left: 35px;
+
+  border-left: 1px solid rgba(0, 184, 240, 0.25);
+}
+
+.footer-publication-label {
+  margin: 0 0 8px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--cyan);
+}
+
+.footer-publication-copy {
+  max-width: 380px;
+  margin: 0 0 16px;
+
+  font-size: 0.95rem;
+  line-height: 1.5;
+
+  color: var(--off-white);
+}
+
+
+/* SUBSTACK */
+
+.footer-newsletter {
+  width: 100%;
+  max-width: 480px;
+
+  overflow: hidden;
+}
+
+.footer-newsletter iframe {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+  height: 320px;
+}
+
+
+/* COPYRIGHT */
+
 .footer-copyright {
-  margin: 16px 0 0;
+  grid-column: 1 / -1;
+
+  margin-top: 6px;
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
 
   font-size: 0.8rem;
 
   color: var(--off-white);
-
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 /* ========================================
@@ -1539,7 +1634,305 @@ position: absolute;
     transparent 100%
   );
 }
+/* ========================================
+   PROJECT DETAIL — CLINICAL TRIAL
+   ======================================== */
 
+.project-detail-hero {
+  padding: 110px 80px;
+  background-color: var(--deep-blue);
+  color: var(--off-white);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.project-hero-video {
+  position: absolute;
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  z-index: -2;
+}
+
+.project-hero-overlay {
+  position: absolute;
+  inset: 0;
+
+  background: rgba(6, 43, 89, 0.82);
+
+  z-index: -1;
+}
+
+
+.project-detail-copy {
+  max-width: 1000px;
+  position: relative;
+  z-index: 1;
+}
+
+.project-detail-label {
+  margin: 0 0 18px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  color: var(--cyan);
+}
+
+.project-detail-hero h1 {
+  margin: 0;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 4rem;
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--off-white);
+}
+
+.project-detail-hero p {
+  max-width: 700px;
+  margin-top: 30px;
+
+  font-size: 1.25rem;
+  line-height: 1.6;
+
+  color: var(--off-white);
+}
+
+
+/* PROJECT SNAPSHOT */
+
+.project-snapshot {
+  padding: 60px 80px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+
+  background-color: var(--off-white);
+}
+
+.snapshot-item {
+  text-align: center;
+}
+
+.snapshot-number {
+  display: block;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 2.8rem;
+
+  color: var(--blue);
+}
+
+.snapshot-label {
+  display: block;
+  margin-top: 10px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--navy);
+}
+
+
+/* SHARED PROJECT SECTION */
+
+.project-problem,
+.project-data-model,
+.project-evolution {
+  padding: 90px 80px;
+
+  background-color: var(--ice-blue);
+}
+
+.project-data-model {
+  background-color: var(--off-white);
+}
+
+.project-section-heading {
+  display: grid;
+  grid-template-columns: 48px minmax(0, 760px);
+  column-gap: 20px;
+
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.project-section-heading h2 {
+  margin: 0 0 24px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 2.6rem;
+  font-weight: 400;
+
+  color: var(--navy);
+}
+
+.project-section-heading p {
+  margin: 0 0 18px;
+
+  font-size: 1.15rem;
+  line-height: 1.7;
+
+  color: var(--slate);
+}
+
+
+/* WORKFLOW VISUAL */
+
+.project-workflow-visual {
+  padding: 70px 60px;
+  background-color: var(--off-white);
+}
+
+.project-workflow-visual img {
+  display: block;
+
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+}
+
+
+/* FINDINGS */
+
+.project-findings {
+  padding: 100px 80px;
+
+  background-color: var(--deep-blue);
+  color: var(--off-white);
+}
+
+.project-findings > h2 {
+  margin: 0 0 50px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 3rem;
+  font-weight: 400;
+
+  text-align: center;
+}
+
+.findings-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+}
+
+.finding-card {
+  padding: 32px;
+
+  border-top: 1px solid rgba(0, 184, 240, 0.65);
+}
+
+.finding-number {
+  display: block;
+  margin-bottom: 18px;
+
+  font-family: 'Gugi', sans-serif;
+  color: var(--cyan);
+}
+
+.finding-card h3 {
+  margin: 0 0 18px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 1.7rem;
+  font-weight: 400;
+
+  color: var(--off-white);
+}
+
+.finding-card p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.7;
+
+  color: var(--off-white);
+}
+
+
+/* FUTURE STATE */
+
+.project-future-state {
+  padding: 90px 80px;
+
+  background-color: var(--off-white);
+  text-align: center;
+}
+
+.project-future-state h2 {
+  margin: 0 0 40px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 2.8rem;
+
+  color: var(--navy);
+}
+
+.future-state-flow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+
+  color: var(--blue);
+}
+
+
+/* TECHNICAL */
+
+.project-technical {
+  padding: 90px 80px;
+
+  background-color: var(--navy);
+  color: var(--off-white);
+
+  text-align: center;
+}
+
+.project-technical h2 {
+  margin: 0 0 30px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 2.4rem;
+
+  color: var(--off-white);
+}
+.project-technical .project-detail-label {
+  max-width: none;
+  margin: 0 auto 18px;
+  text-align: center;
+}
+
+.project-technical .technical-note {
+  max-width: none;
+  margin: -10px auto 35px;
+
+  font-size: 0.95rem;
+  color: var(--ice-blue);
+  text-align: center;
+}
 /* ========================================
    RESPONSIVE — SMALL DESKTOP / TABLET
    ======================================== */
@@ -1600,7 +1993,7 @@ position: absolute;
 
     padding: 70px 32px;
   }
-  focus-hero {
+  .focus-hero {
   min-height: auto;
   padding: 80px 32px;
   display: block;
@@ -1775,22 +2168,25 @@ position: absolute;
 
   /* FOOTER */
 
-  footer {
-    padding: 48px 32px;
+.site-footer {
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
 
-    flex-direction: column;
-    align-items: stretch;
-    gap: 40px;
-  }
+  padding: 45px 32px 28px;
+}
 
-  .footer-newsletter {
-    width: 100%;
-  }
+.footer-publication-column {
+  grid-column: 1 / -1;
 
-  .footer-newsletter iframe {
-    width: 100%;
-    max-width: 480px;
-  }
+  padding-left: 0;
+  padding-top: 30px;
+
+  border-left: 0;
+  border-top: 1px solid rgba(0, 184, 240, 0.25);
+}
+
+.footer-copyright {
+  grid-column: 1 / -1;
 }
 
 /* AREAS OF FOCUS — TABLET / MOBILE */
@@ -1891,10 +2287,28 @@ position: absolute;
 
   /* FOOTER */
 
-  .footer-socials img {
-    width: 40px;
-    height: 40px;
-  }
+.site-footer {
+  grid-template-columns: 380px 1fr 1.25fr;
+  gap: 30px;
+
+  padding: 40px 22px 24px;
+}
+
+.footer-publication-column {
+  grid-column: auto;
+
+  padding-top: 28px;
+}
+
+.footer-copyright {
+  grid-column: auto;
+}
+
+.footer-newsletter iframe {
+  width: 100%;
+  height: 320px;
+}
+
   /* AREAS OF FOCUS — PHONE */
 
 .focus-hero,

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About | Hermeneia</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=3">
   </head>
 
   <body>
@@ -244,50 +244,81 @@
 </section>
 
     </main>
+
 <!-- ========================================
      FOOTER
      ======================================== -->
 
-    <footer>
+<footer class="site-footer">
 
-      <div class="footer-contact">
+  <div class="footer-brand-column">
+    <a class="footer-logo" href="index.html">
 
-        <div class="footer-brand">
-          <p>HERMENEIA CONSULTING</p>
-          <p>Healthcare data tells a story beyond the system.</p>
-        </div>
+  <img src="images/hermeneia-logo.png" alt="Hermeneia Consulting logo">
+</a>
 
-        <a class="footer-email" href="mailto:YOUR-EMAIL-HERE">
-          YOUR-EMAIL-HERE
-        </a>
+    <div class="footer-brand">
+    </div>
 
-        <div class="footer-socials">
+  </div>
 
-          <a href="https://github.com/hermeneia-consulting" aria-label="Hermeneia on GitHub">
-            <img src="images/github-icon.png" alt="">
-          </a>
+  <div class="footer-contact-column">
 
-          <a href="https://www.linkedin.com/company/hermeneia-healthcare/" aria-label="Hermeneia on LinkedIn">
-            <img src="images/linkedin-icon.png" alt="">
-          </a>
+    <a class="footer-contact-item" href="mailto:YOUR-EMAIL-HERE">
+      <span class="footer-contact-icon">✉</span>
+      <span>YOUR-EMAIL-HERE</span>
+    </a>
 
-        </div>
+    <a
+      class="footer-contact-item"
+      href="https://www.linkedin.com/company/hermeneia-healthcare/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/linkedin-icon.png" alt="">
+      <span>LinkedIn</span>
+    </a>
 
-      </div>
+    <a
+      class="footer-contact-item"
+      href="https://github.com/hermeneia-consulting"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/github-icon.png" alt="">
+      <span>GitHub</span>
+    </a>
 
-      <div class="footer-newsletter">
-        <iframe
-          src="https://thehumanoverride.substack.com/embed"
-          width="480"
-          height="320"
-          style="border: 1px solid #EEE; background: white"
-          frameborder="0"
-          scrolling="no">
-        </iframe>
-      </div>
+  </div>
 
-    </footer>
-     <!-- END FOOTER -->
+  <div class="footer-publication-column">
+
+    <p class="footer-publication-label">THE HUMAN OVERRIDE</p>
+
+    <p class="footer-publication-copy">
+      Healthcare AI, governance, and the human layer.
+    </p>
+
+    <div class="footer-newsletter">
+      <iframe
+        src="https://thehumanoverride.substack.com/embed"
+        width="480"
+        height="320"
+        style="border: 1px solid #EEE; background: white"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-copyright">
+    © 2026 Hermeneia Consulting. All rights reserved.
+  </div>
+
+</footer>
+
+<!-- END FOOTER -->
 
 </body>
 
