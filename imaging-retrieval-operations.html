@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Imaging Retrieval Operations | Hermeneia</title>
+  <link rel="stylesheet" href="style.css?v=3">
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER / NAVIGATION
+       ======================================== -->
+
+  <header>
+    <a class="brand" href="index.html">
+      <img src="images/hermeneia-logo.png" alt="Hermeneia Consulting logo">
+    </a>
+
+    <nav>
+      <a href="about.html">ABOUT</a>
+      <a href="areas-of-focus.html">AREAS OF FOCUS</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="#">INSIGHTS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+
+<!-- ========================================
+     PROJECT HERO
+     ======================================== -->
+
+<section class="project-detail-hero">
+
+  <video class="project-hero-video" autoplay muted loop playsinline>
+    <source src="video/hero-network.mp4" type="video/mp4">
+  </video>
+
+  <div class="project-hero-overlay"></div>
+
+  <div class="project-detail-copy">
+
+    <p class="project-detail-label">IMAGING RETRIEVAL OPERATIONS</p>
+
+    <h1>
+      A Workflow and Data Analysis<br>
+      of Diagnostic Imaging Retrieval<span class="cursor"></span>
+    </h1>
+
+    <p>
+      How platform availability, facility behavior, and retrieval pathways
+      shape operational effort, turnaround, and workflow complexity.
+    </p>
+
+  </div>
+
+</section>
+
+    <!-- ========================================
+         PROJECT SNAPSHOT
+         ======================================== -->
+
+    <section class="project-snapshot">
+
+      <div class="snapshot-item">
+        <span class="snapshot-number">50,000</span>
+        <span class="snapshot-label">SYNTHETIC CASES</span>
+      </div>
+
+      <div class="snapshot-item">
+        <span class="snapshot-number">400</span>
+        <span class="snapshot-label">HEALTHCAREFACILITIES</span>
+      </div>
+
+      <div class="snapshot-item">
+        <span class="snapshot-number">6</span>
+        <span class="snapshot-label">SYNTHETIC IMAGINGPLATFORMS</span>
+      </div>
+
+      <div class="snapshot-item">
+        <span class="snapshot-number">75k-80k</span>
+        <span class="snapshot-label">PLANNED IMAGING REQUESTS</span>
+      </div>
+
+    </section>
+
+   <!-- ========================================
+     THE OPERATIONAL PROBLEM
+     ======================================== -->
+
+<section class="project-problem">
+
+  <div class="project-section-heading">
+    <span class="text-marker">&lt;</span>
+
+    <div>
+      <h2>THE OPERATIONAL PROBLEM</h2>
+
+      <p>
+        Diagnostic imaging retrieval is not a single standardized workflow.
+        The retrieval path changes depending on whether a facility has a
+        documented imaging platform, how reliably that facility responds,
+        and whether imaging can be transferred digitally or must be shipped
+        on physical media.
+      </p>
+
+      <p>
+        A single case may also require imaging from multiple facilities,
+        meaning several retrieval requests can move through different
+        pathways, timelines, and follow-up cycles at the same time.
+      </p>
+    </div>
+  </div>
+
+</section>
+
+    <!-- ========================================
+     IMAGING RETRIEVAL WORKFLOW
+     ======================================== -->
+
+<section class="project-workflow-visual">
+
+  <img
+    src="images/imaging-retrieval-workflow.png"
+    alt="Diagnostic imaging retrieval workflow showing SaaS and physical-media retrieval pathways"
+  >
+
+</section>
+
+    <!-- ========================================
+     FROM WORKFLOW TO REQUEST-LEVEL MODELING
+     ======================================== -->
+
+<section class="project-data-model">
+
+  <div class="project-section-heading">
+    <span class="text-marker">&lt;</span>
+
+    <div>
+      <h2>FROM WORKFLOW TO REQUEST-LEVEL MODELING</h2>
+
+      <p>
+        The original project treated imaging retrieval mainly as a comparison
+        between digital and physical retrieval methods. As the workflow was
+        mapped in more detail, that model proved too simple.
+      </p>
+
+      <p>
+        A single case can require imaging from multiple healthcare facilities,
+        and each facility may follow a different retrieval pathway, use a
+        different imaging platform, and progress through its own follow-up
+        cycle.
+      </p>
+
+      <p>
+        The redesigned relational model therefore centers on the individual
+        imaging request rather than the case alone, allowing retrieval activity
+        to be tracked at the level where the operational work actually occurs.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+    <!-- ========================================
+     WHAT THE MODEL IS DESIGNED TO EXPLORE
+     ======================================== -->
+
+<section class="project-findings">
+
+  <h2>WHAT THE MODEL IS DESIGNED TO EXPLORE</h2>
+
+  <div class="findings-grid">
+
+    <div class="finding-card">
+      <h3>PLATFORM COVERAGE</h3>
+
+      <p>
+        How facility access to SaaS imaging platforms changes the retrieval
+        pathways available to the operations team.
+      </p>
+    </div>
+
+    <div class="finding-card">
+      <h3>FACILITY BEHAVIOR</h3>
+
+      <p>
+        How differences in facility response patterns affect manual outreach,
+        follow-up activity, and retrieval workload.
+      </p>
+    </div>
+
+    <div class="finding-card">
+      <h3>PHYSICAL-MEDIA FRICTION</h3>
+
+      <p>
+        Where facility processing, shipment method, and physical-media
+        handling introduce additional time and variability into retrieval.
+      </p>
+    </div>
+
+    <div class="finding-card">
+      <h3>WORKLOAD CONCENTRATION</h3>
+
+      <p>
+        Which facilities, retrieval pathways, and request characteristics
+        generate disproportionate operational effort.
+      </p>
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ========================================
+     PROJECT EVOLUTION
+     ======================================== -->
+
+<section class="project-future-state">
+
+  <div class="project-section-heading">
+    <span class="text-marker">&lt;</span>
+
+    <div>
+      <h2>PROJECT EVOLUTION</h2>
+
+      <p>
+        The project began as a small comparison of SaaS-based and
+        physical-media imaging retrieval. Mapping the workflow exposed a
+        more complex operational system than the original model could
+        represent.
+      </p>
+
+      <p>
+        The project was rebuilt around request-level activity,
+        facility-to-platform relationships, retrieval-event history,
+        physical shipments, and the independent progression of multiple
+        imaging requests within the same case.
+      </p>
+
+      <p>
+        The current phase uses Python to generate a reproducible
+        12-month synthetic operational environment that can be loaded
+        into MySQL for validation, exploratory analysis, and future
+        scenario modeling.
+      </p>
+
+    </div>
+  </div>
+
+</section>
+
+    <!-- ========================================
+     TECHNICAL IMPLEMENTATION
+     ======================================== -->
+
+<section class="project-technical">
+
+  <div class="project-section-heading">
+    <span class="text-marker">&lt;</span>
+
+    <div>
+      <h2>TECHNICAL IMPLEMENTATION</h2>
+
+      <p class="project-detail-label">
+        MySQL · Python · Relational Data Modeling · Synthetic Data Generation
+      </p>
+
+      <p>
+        The project uses Python to generate a reproducible synthetic
+        operational dataset and MySQL to model the relationships between
+        patients, cases, facilities, imaging platforms, imaging requests,
+        retrieval events, and physical shipments.
+      </p>
+
+      <p>
+        Supporting documentation defines the current-state workflow,
+        business rules, relational model, and assumptions governing
+        synthetic data generation.
+      </p>
+
+      <p class="project-detail-label">
+        Version controlled with Git + GitHub
+      </p>
+
+      <a
+        class="project-github-link"
+        href="https://github.com/hermeneia-consulting/imaging-retrieval-operations"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        VIEW PROJECT ON GITHUB →
+      </a>
+
+    </div>
+  </div>
+
+</section>
+
+  </main>
+
+  <!-- ========================================
+     FOOTER
+     ======================================== -->
+
+<footer class="site-footer">
+
+  <div class="footer-brand-column">
+    <a class="footer-logo" href="index.html">
+
+  <img src="images/hermeneia-logo.png" alt="Hermeneia logo">
+</a>
+
+    <div class="footer-brand">
+    </div>
+
+  </div>
+
+  <div class="footer-contact-column">
+
+    <a class="footer-contact-item" href="mailto:hello@askhermeneia.com">
+      <span class="footer-contact-icon">✉</span>
+      <span>hello@askhermeneia.com</span>
+    </a>
+
+    <a
+      class="footer-contact-item"
+      href="https://www.linkedin.com/company/hermeneia-healthcare/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/linkedin-icon.png" alt="">
+      <span>LinkedIn</span>
+    </a>
+
+    <a
+      class="footer-contact-item"
+      href="https://github.com/hermeneia-consulting"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <img src="images/github-icon.png" alt="">
+      <span>GitHub</span>
+    </a>
+
+  </div>
+
+  <div class="footer-publication-column">
+
+    <p class="footer-publication-label">THE HUMAN OVERRIDE</p>
+
+    <p class="footer-publication-copy">
+      Healthcare AI, governance, and the human layer.
+    </p>
+
+    <div class="footer-newsletter">
+      <iframe
+        src="https://thehumanoverride.substack.com/embed"
+        width="480"
+        height="320"
+        style="border: 1px solid #EEE; background: white"
+        frameborder="0"
+        scrolling="no">
+      </iframe>
+    </div>
+
+  </div>
+
+  <div class="footer-copyright">
+    © 2026 Hermeneia. All rights reserved.
+  </div>
+
+</footer>
+
+<!-- END FOOTER -->
+
+</body>
+
+</html>
