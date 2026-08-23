@@ -1945,6 +1945,10 @@ position: absolute;
 }
 
 
+/* ========================================
+   RESPONSIVE — TABLET
+   ======================================== */
+
 @media (max-width: 900px) {
 
   /* HEADER */
@@ -1963,7 +1967,6 @@ position: absolute;
 
   nav {
     width: 100%;
-
     padding: 14px 16px;
 
     justify-content: center;
@@ -1993,78 +1996,87 @@ position: absolute;
 
     padding: 70px 32px;
   }
+
+
+  /* AREAS OF FOCUS */
+
   .focus-hero {
-  min-height: auto;
-  padding: 80px 32px;
-  display: block;
-}
+    min-height: auto;
+    padding: 80px 32px;
 
-.focus-hero-content {
-  width: 100%;
-  max-width: 620px;
-}
+    display: block;
+  }
 
-.focus-hero h1 {
-  font-size: clamp(3rem, 9vw, 4.5rem);
-  line-height: 1.05;
-}
+  .focus-hero-content {
+    width: 100%;
+    max-width: 620px;
+  }
 
-.focus-intro {
-  max-width: 560px;
-}
+  .focus-hero h1 {
+    font-size: clamp(3rem, 9vw, 4.5rem);
+    line-height: 1.05;
+  }
 
-.focus-hero-network {
-  position: absolute;
-  top: auto;
-  right: -120px;
-  bottom: 40px;
+  .focus-intro {
+    max-width: 560px;
+  }
 
-  width: 520px;
-  max-width: none;
+  .focus-hero-network {
+    position: absolute;
 
-  transform: none;
+    top: auto;
+    right: -120px;
+    bottom: 40px;
 
-  opacity: 0.22;
-}
+    width: 520px;
+    max-width: none;
 
-.focus-grid {
-  grid-template-columns: 1fr;
-  gap: 56px;
-}
+    transform: none;
 
-.focus-card {
-  width: 100%;
-  max-width: 650px;
-  margin: 0 auto;
-}
+    opacity: 0.22;
+  }
 
-.focus-systems {
-  min-height: auto;
-  padding: 70px 32px;
+  .focus-grid {
+    grid-template-columns: 1fr;
+    gap: 56px;
+  }
 
-  grid-template-columns: 1fr;
-  gap: 30px;
-}
+  .focus-card {
+    width: 100%;
+    max-width: 650px;
+    margin: 0 auto;
+  }
 
-.focus-systems-visual {
-  min-height: 300px;
-}
+  .focus-systems {
+    min-height: auto;
+    padding: 70px 32px;
 
-.focus-systems-visual img {
-  position: relative;
-  top: auto;
-  right: auto;
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
 
-  width: 100%;
-  max-width: 520px;
+  .focus-systems-visual {
+    min-height: 300px;
+  }
 
-  margin: 0 auto;
-  display: block;
+  .focus-systems-visual img {
+    position: relative;
 
-  transform: none;
-}
+    top: auto;
+    right: auto;
 
-  /* ABOUT HERO */
+    display: block;
+
+    width: 100%;
+    max-width: 520px;
+
+    margin: 0 auto;
+
+    transform: none;
+  }
+
+
+  /* ABOUT */
 
   .about-hero {
     min-height: auto;
@@ -2097,9 +2109,6 @@ position: absolute;
     opacity: 0.25;
   }
 
-
-  /* STORY */
-
   .about-story {
     min-height: auto;
     padding: 70px 32px;
@@ -2125,9 +2134,6 @@ position: absolute;
     opacity: 0.18;
   }
 
-
-  /* OPERATIONS / DATA / SYSTEMS */
-
   .about-pillars {
     padding: 70px 32px;
 
@@ -2144,9 +2150,6 @@ position: absolute;
     width: 1px;
     height: 50px;
   }
-
-
-  /* CLOSING */
 
   .about-closing {
     min-height: auto;
@@ -2166,30 +2169,96 @@ position: absolute;
   }
 
 
+  /* CLINICAL TRIAL PROJECT */
+
+  .project-detail-hero {
+    padding: 80px 32px;
+  }
+
+  .project-detail-hero h1 {
+    font-size: clamp(2.8rem, 7vw, 4rem);
+    line-height: 1.15;
+  }
+
+  .project-detail-hero p {
+    font-size: 1.1rem;
+  }
+
+  .project-snapshot {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 36px;
+
+    padding: 50px 32px;
+  }
+
+  .snapshot-number {
+    font-size: 2.2rem;
+  }
+
+  .project-problem,
+  .project-data-model,
+  .project-evolution {
+    padding: 70px 32px;
+  }
+
+  .project-section-heading {
+    grid-template-columns: 40px minmax(0, 1fr);
+    column-gap: 16px;
+  }
+
+  .project-section-heading h2 {
+    font-size: 2.2rem;
+  }
+
+  .project-workflow-visual {
+    overflow-x: auto;
+
+    padding: 50px 32px;
+  }
+
+  .project-workflow-visual img {
+    width: 950px;
+    max-width: none;
+  }
+
+  .project-findings {
+    padding: 70px 32px;
+  }
+
+  .findings-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .project-future-state,
+  .project-technical {
+    padding: 70px 32px;
+  }
+
+
   /* FOOTER */
 
-.site-footer {
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+  .site-footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
 
-  padding: 45px 32px 28px;
+    padding: 45px 32px 28px;
+  }
+
+  .footer-publication-column {
+    grid-column: 1 / -1;
+
+    padding-left: 0;
+    padding-top: 30px;
+
+    border-left: 0;
+    border-top: 1px solid rgba(0, 184, 240, 0.25);
+  }
+
+  .footer-copyright {
+    grid-column: 1 / -1;
+  }
 }
-
-.footer-publication-column {
-  grid-column: 1 / -1;
-
-  padding-left: 0;
-  padding-top: 30px;
-
-  border-left: 0;
-  border-top: 1px solid rgba(0, 184, 240, 0.25);
-}
-
-.footer-copyright {
-  grid-column: 1 / -1;
-}
-
-/* AREAS OF FOCUS — TABLET / MOBILE */
 
 
 /* ========================================
@@ -2285,66 +2354,371 @@ position: absolute;
   }
 
 
+  /* AREAS OF FOCUS */
+
+  .focus-hero,
+  .focus-areas,
+  .focus-systems {
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .focus-hero h1 {
+    font-size: 2.8rem;
+  }
+
+  .focus-hero-network {
+    right: -180px;
+    bottom: 60px;
+
+    width: 500px;
+
+    opacity: 0.14;
+  }
+
+  .focus-card {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .focus-card h2 {
+    font-size: 1.8rem;
+  }
+
+  .focus-systems h2 {
+    font-size: 2.2rem;
+  }
+
+  .focus-systems-visual {
+    min-height: 240px;
+  }
+
+
+  /* CLINICAL TRIAL PROJECT */
+
+  .project-detail-hero {
+    padding: 64px 22px;
+  }
+
+  .project-detail-label {
+    font-size: 0.9rem;
+  }
+
+  .project-detail-hero h1 {
+    font-size: 2.4rem;
+    line-height: 1.18;
+
+    overflow-wrap: break-word;
+  }
+
+  .project-detail-hero p {
+    margin-top: 24px;
+
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+  /* 2 × 2 snapshot instead of giant stacked list */
+
+  .project-snapshot {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+
+    padding: 42px 22px;
+  }
+
+  .snapshot-number {
+    font-size: 1.8rem;
+  }
+
+  .snapshot-label {
+    font-size: 0.8rem;
+    line-height: 1.3;
+  }
+
+
+  /* PROJECT TEXT SECTIONS */
+
+  .project-problem,
+  .project-data-model,
+  .project-evolution {
+    padding: 56px 22px;
+  }
+
+  .project-section-heading {
+    grid-template-columns: 30px minmax(0, 1fr);
+    column-gap: 10px;
+  }
+
+  .project-section-heading h2 {
+    margin-bottom: 18px;
+
+    font-size: 1.75rem;
+    line-height: 1.2;
+  }
+
+  .project-section-heading p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+
+  /* WORKFLOW — KEEP IT READABLE */
+
+  .project-workflow-visual {
+    overflow-x: auto;
+
+    padding: 40px 22px;
+
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .project-workflow-visual img {
+    width: 900px;
+    max-width: none;
+
+    margin: 0;
+  }
+
+
+  /* FINDINGS */
+
+  .project-findings {
+    padding: 60px 22px;
+  }
+
+  .project-findings > h2 {
+    margin-bottom: 36px;
+
+    font-size: 2rem;
+    line-height: 1.2;
+    text-align: left;
+  }
+
+  .findings-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .finding-card {
+    padding: 28px 0;
+  }
+
+  .finding-card h3 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .finding-card p {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+
+  /* FUTURE STATE */
+
+  .project-future-state {
+    padding: 60px 22px;
+  }
+
+  .project-future-state h2 {
+    font-size: 2rem;
+  }
+
+  .future-state-flow {
+    flex-direction: column;
+    gap: 12px;
+
+    font-size: 1.15rem;
+  }
+
+
+  /* TECHNICAL */
+
+  .project-technical {
+    padding: 60px 22px;
+  }
+
+  .project-technical h2 {
+    font-size: 1.8rem;
+    line-height: 1.35;
+  }
+
+
   /* FOOTER */
 
-.site-footer {
-  grid-template-columns: 380px 1fr 1.25fr;
-  gap: 30px;
+  .site-footer {
+    grid-template-columns: 1fr;
+    gap: 32px;
 
-  padding: 40px 22px 24px;
+    padding: 40px 22px 24px;
+  }
+
+  .footer-contact-column {
+    padding-top: 0;
+  }
+
+  .footer-publication-column {
+    grid-column: auto;
+
+    padding-left: 0;
+    padding-top: 28px;
+
+    border-left: 0;
+    border-top: 1px solid rgba(0, 184, 240, 0.25);
+  }
+
+  .footer-copyright {
+    grid-column: auto;
+  }
+
+  .footer-newsletter iframe {
+    width: 100%;
+    height: 320px;
+  }
+  /* FOOTER ICONS — PHONE */
+
+.footer-contact-item img {
+  width: 32px;
+  height: 32px;
+  max-width: 32px;
+  flex: 0 0 32px;
 }
 
-.footer-publication-column {
-  grid-column: auto;
+.footer-contact-icon {
+  width: 32px;
+  flex: 0 0 32px;
+  font-size: 1.3rem;
+}
+  /* CLINICAL TRIAL PROJECT — PHONE */
 
-  padding-top: 28px;
+.project-detail-hero {
+  padding: 60px 22px;
 }
 
-.footer-copyright {
-  grid-column: auto;
+.project-detail-hero h1 {
+  font-size: 2.35rem;
+  line-height: 1.15;
 }
 
-.footer-newsletter iframe {
-  width: 100%;
-  height: 320px;
+.project-detail-hero p {
+  font-size: 1rem;
+  line-height: 1.6;
 }
 
-  /* AREAS OF FOCUS — PHONE */
 
-.focus-hero,
-.focus-areas,
-.focus-systems {
-  padding-left: 22px;
-  padding-right: 22px;
+/* PROJECT SNAPSHOT */
+
+.project-snapshot {
+  grid-template-columns: repeat(2, 1fr);
+  gap: 28px 16px;
+
+  padding: 42px 22px;
 }
 
-.focus-hero h1 {
-  font-size: 2.8rem;
-}
-
-.focus-hero-network {
-  right: -180px;
-  bottom: 60px;
-
-  width: 500px;
-
-  opacity: 0.14;
-}
-
-.focus-card {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.focus-card h2 {
+.snapshot-number {
   font-size: 1.8rem;
 }
 
-.focus-systems h2 {
-  font-size: 2.2rem;
+.snapshot-label {
+  font-size: 0.8rem;
+  line-height: 1.3;
 }
 
-.focus-systems-visual {
-  min-height: 240px;
+
+/* PROJECT TEXT SECTIONS */
+
+.project-problem,
+.project-data-model,
+.project-evolution {
+  padding: 55px 22px;
+}
+
+.project-section-heading {
+  grid-template-columns: 30px 1fr;
+  column-gap: 10px;
+}
+
+.project-section-heading h2 {
+  font-size: 1.8rem;
+  line-height: 1.2;
+}
+
+.project-section-heading p {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+
+/* WORKFLOW GRAPHIC */
+
+.project-workflow-visual {
+  overflow-x: auto;
+  padding: 40px 22px;
+}
+
+.project-workflow-visual img {
+  width: 850px;
+  max-width: none;
+}
+
+
+/* FINDINGS */
+
+.project-findings {
+  padding: 60px 22px;
+}
+
+.project-findings > h2 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+.findings-grid {
+  grid-template-columns: 1fr;
+  gap: 10px;
+}
+
+.finding-card {
+  padding: 28px 0;
+}
+
+.finding-card h3 {
+  font-size: 1.45rem;
+}
+
+.finding-card p {
+  font-size: 1rem;
+}
+
+
+/* FUTURE STATE */
+
+.project-future-state {
+  padding: 60px 22px;
+}
+
+.project-future-state h2 {
+  font-size: 2rem;
+}
+
+.future-state-flow {
+  flex-direction: column;
+  gap: 12px;
+
+  font-size: 1.15rem;
+}
+
+
+/* TECHNICAL */
+
+.project-technical {
+  padding: 60px 22px;
+}
+
+.project-technical h2 {
+  font-size: 1.8rem;
+  line-height: 1.3;
 }
 }
