@@ -1,41 +1,96 @@
 <?php
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require '/home/askhpade/phpmailer/src/Exception.php';
+require '/home/askhpade/phpmailer/src/PHPMailer.php';
+require '/home/askhpade/phpmailer/src/SMTP.php';
+
+
 if ($_SERVER["REQUEST_METHOD"] !== "POST") {
     http_response_code(405);
     exit("Method not allowed.");
 }
+
+
+/* ========================================
+   FORM DATA
+   ======================================== */
 
 $name = trim($_POST["name"] ?? "");
 $email = trim($_POST["email"] ?? "");
 $subject = trim($_POST["subject"] ?? "");
 $message = trim($_POST["message"] ?? "");
 
+
 if ($name === "" || $email === "" || $subject === "" || $message === "") {
     exit("Please complete all fields.");
 }
+
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     exit("Please enter a valid email address.");
 }
 
-$to = "hello@askhermeneia.com";
 
-$email_subject = "Hermeneia Contact: " . $subject;
+/* ========================================
+   SMTP
+   ======================================== */
 
-$email_body =
-    "Name: " . $name . "\n" .
-    "Email: " . $email . "\n\n" .
-    "Message:\n" . $message . "\n";
+$mail = new PHPMailer(true);
 
-$headers =
-    "From: hello@askhermeneia.com\r\n" .
-    "Reply-To: " . $email . "\r\n" .
-    "Content-Type: text/plain; charset=UTF-8\r\n";
+try {
 
-if (mail($to, $email_subject, $email_body, $headers)) {
+    $mail->isSMTP();
+
+    $mail->Host = 'smtp-relay.gmail.com';
+    $mail->SMTPAuth = false;
+    $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+    $mail->Port = 587;
+
+
+    /* Hermeneia is the authenticated sender */
+
+    $mail->setFrom(
+        'hello@askhermeneia.com',
+        'Hermeneia Website'
+    );
+
+
+    /* Replying to the email goes to the visitor */
+
+    $mail->addReplyTo(
+        $email,
+        $name
+    );
+
+
+    /* Deliver contact-form messages here */
+
+    $mail->addAddress(
+        'hello@askhermeneia.com'
+    );
+
+
+    $mail->Subject = 'Hermeneia Contact: ' . $subject;
+
+    $mail->Body =
+        "Name: " . $name . "\n" .
+        "Email: " . $email . "\n\n" .
+        "Message:\n" . $message;
+
+
+    $mail->send();
+
     header("Location: contact.html?sent=1");
     exit;
-}
 
-http_response_code(500);
-echo "Sorry, your message could not be sent.";
+
+} catch (Exception $e) {
+
+    http_response_code(500);
+
+    echo "Message could not be sent.<br>";
+    echo "Mailer error: " . htmlspecialchars($mail->ErrorInfo);
+}
