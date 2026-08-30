@@ -1635,7 +1635,9 @@ position: absolute;
   );
 }
 /* ========================================
-   PROJECT DETAIL — CLINICAL TRIAL
+   PROJECT PAGES — SHARED DESIGN SYSTEM
+   Used by all individual project case-study pages.
+   Keep these class names shared across projects.
    ======================================== */
 
 .project-detail-hero {
@@ -2185,835 +2187,1294 @@ position: absolute;
 .contact-link-block a:hover {
   color: var(--blue);
 }
-
 /* ========================================
-   RESPONSIVE — SMALL DESKTOP / TABLET
+   INSIGHTS PAGE
+   Editorial architecture:
+   01 Hero
+   02 Featured Insight
+   03 Library Header
+   04 Category Navigation
+   05 Article Index
    ======================================== */
-
-@media (max-width: 1100px) {
-
-  .project-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
 
 
 /* ========================================
-   RESPONSIVE — TABLET
+   INSIGHTS 01 — HERO
+   Main editorial introduction at top.
    ======================================== */
 
-@media (max-width: 900px) {
-  
-  /* CONTACT */
+.insights-hero {
+  position: relative;
+  overflow: hidden;
 
-.contact-hero {
-  min-height: auto;
-  padding: 80px 32px;
+  min-height: 560px;
+  padding: 100px 80px;
+
+  display: flex;
+  align-items: center;
+
+  background-color: var(--deep-blue);
+  color: var(--off-white);
 }
 
-.contact-grid {
-  grid-template-columns: 1fr;
-  gap: 40px;
+.insights-hero-content {
+  position: relative;
+  z-index: 2;
+
+  width: 65%;
+  max-width: 900px;
 }
 
-.contact-links-column {
-  padding-top: 0;
+.insights-label,
+.insights-eyebrow {
+  margin: 0 0 18px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  color: var(--cyan);
 }
 
-  /* HEADER */
+.insights-hero h1 {
+  margin: 0;
 
-  header {
-    padding: 20px 24px;
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(3.5rem, 5vw, 5.5rem);
+  font-weight: 400;
+  line-height: 1.05;
 
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-  }
+  color: var(--off-white);
+}
 
-  .brand img {
-    width: 140px;
-  }
+.insights-hero-content > p:last-of-type {
+  max-width: 650px;
+  margin: 32px 0 0;
 
-  nav {
-    width: 100%;
-    padding: 14px 16px;
+  font-size: 1.25rem;
+  line-height: 1.65;
 
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
+  color: var(--ice-blue);
+}
 
-  nav a {
-    font-size: 1.25rem;
-  }
+/* Hero network artwork */
 
+.insights-hero-network {
+  position: absolute;
 
-  /* HOME */
+  top: 50%;
+  right: 8%;
 
-  .hero {
-    padding: 90px 32px;
-  }
+  width: 70%;
+  max-width: 900px;
+  height: auto;
 
-  .hero h1 {
-    font-size: clamp(3rem, 8vw, 4.5rem);
-    line-height: 1;
-  }
+  transform: translateY(-50%);
 
-  .approach {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  opacity: 0.55;
+  z-index: 1;
 
-    padding: 70px 32px;
-  }
+  -webkit-mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 18%,
+    black 100%
+  );
 
-
-  /* AREAS OF FOCUS */
-
-  .focus-hero {
-    min-height: auto;
-    padding: 80px 32px;
-
-    display: block;
-  }
-
-  .focus-hero-content {
-    width: 100%;
-    max-width: 620px;
-  }
-
-  .focus-hero h1 {
-    font-size: clamp(3rem, 9vw, 4.5rem);
-    line-height: 1.05;
-  }
-
-  .focus-intro {
-    max-width: 560px;
-  }
-
-  .focus-hero-network {
-    position: absolute;
-
-    top: auto;
-    right: -120px;
-    bottom: 40px;
-
-    width: 520px;
-    max-width: none;
-
-    transform: none;
-
-    opacity: 0.22;
-  }
-
-  .focus-grid {
-    grid-template-columns: 1fr;
-    gap: 56px;
-  }
-
-  .focus-card {
-    width: 100%;
-    max-width: 650px;
-    margin: 0 auto;
-  }
-
-  .focus-systems {
-    min-height: auto;
-    padding: 70px 32px;
-
-    grid-template-columns: 1fr;
-    gap: 30px;
-  }
-
-  .focus-systems-visual {
-    min-height: 300px;
-  }
-
-  .focus-systems-visual img {
-    position: relative;
-
-    top: auto;
-    right: auto;
-
-    display: block;
-
-    width: 100%;
-    max-width: 520px;
-
-    margin: 0 auto;
-
-    transform: none;
-  }
-
-
-  /* ABOUT */
-
-  .about-hero {
-    min-height: auto;
-    padding: 80px 32px;
-
-    display: block;
-  }
-
-  .about-hero-content {
-    width: 100%;
-    max-width: 650px;
-  }
-
-  .about-hero h1 {
-    font-size: clamp(3rem, 8vw, 4.5rem);
-    line-height: 1;
-  }
-
-  .about-hero-content p {
-    max-width: 550px;
-  }
-
-  .network-graphic {
-    width: 650px;
-    height: 500px;
-
-    right: -250px;
-    left: auto;
-
-    opacity: 0.25;
-  }
-
-  .about-story {
-    min-height: auto;
-    padding: 70px 32px;
-
-    display: block;
-  }
-
-  .story-content {
-    width: 100%;
-    max-width: 650px;
-  }
-
-  .story-copy p {
-    max-width: 600px;
-  }
-
-  .story-network {
-    width: 600px;
-    height: 400px;
-
-    right: -300px;
-
-    opacity: 0.18;
-  }
-
-  .about-pillars {
-    padding: 70px 32px;
-
-    flex-direction: column;
-    gap: 36px;
-  }
-
-  .pillar {
-    width: 100%;
-    max-width: 350px;
-  }
-
-  .pillar-connector {
-    width: 1px;
-    height: 50px;
-  }
-
-  .about-closing {
-    min-height: auto;
-    padding: 70px 32px;
-
-    grid-template-columns: 40px minmax(0, 1fr);
-    column-gap: 16px;
-  }
-
-  .closing-network {
-    width: 500px;
-    height: 300px;
-
-    right: -300px;
-
-    opacity: 0.15;
-  }
-
-
-  /* CLINICAL TRIAL PROJECT */
-
-  .project-detail-hero {
-    padding: 80px 32px;
-  }
-
-  .project-detail-hero h1 {
-    font-size: clamp(2.8rem, 7vw, 4rem);
-    line-height: 1.15;
-  }
-
-  .project-detail-hero p {
-    font-size: 1.1rem;
-  }
-
-  .project-snapshot {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 36px;
-
-    padding: 50px 32px;
-  }
-
-  .snapshot-number {
-    font-size: 2.2rem;
-  }
-
-  .project-problem,
-  .project-data-model,
-  .project-evolution {
-    padding: 70px 32px;
-  }
-
-  .project-section-heading {
-    grid-template-columns: 40px minmax(0, 1fr);
-    column-gap: 16px;
-  }
-
-  .project-section-heading h2 {
-    font-size: 2.2rem;
-  }
-
-  .project-workflow-visual {
-    overflow-x: auto;
-
-    padding: 50px 32px;
-  }
-
-  .project-workflow-visual img {
-    width: 950px;
-    max-width: none;
-  }
-
-  .project-findings {
-    padding: 70px 32px;
-  }
-
-  .findings-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-
-  .project-future-state,
-  .project-technical {
-    padding: 70px 32px;
-  }
-
-
-  /* FOOTER */
-
-  .site-footer {
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-
-    padding: 45px 32px 28px;
-  }
-
-  .footer-publication-column {
-    grid-column: 1 / -1;
-
-    padding-left: 0;
-    padding-top: 30px;
-
-    border-left: 0;
-    border-top: 1px solid rgba(0, 184, 240, 0.25);
-  }
-
-  .footer-copyright {
-    grid-column: 1 / -1;
-  }
+  mask-image: linear-gradient(
+    to right,
+    transparent 0%,
+    black 18%,
+    black 100%
+  );
 }
 
 
 /* ========================================
-   RESPONSIVE — PHONE
+   INSIGHTS 02 — FEATURED INSIGHT
+   Large editorial treatment for latest/featured article.
    ======================================== */
 
-@media (max-width: 600px) {
+.featured-insight {
+  padding: 120px 80px;
 
-  /* CONTACT — PHONE */
-
-.contact-hero {
-  padding: 65px 22px;
+  background-color: var(--off-white);
+  color: var(--navy);
 }
 
-.contact-hero h1 {
-  font-size: 2.8rem;
+.featured-insight-editorial {
+  position: relative;
+
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 110px minmax(0, 1fr) 120px;
+  gap: 45px;
+
+  padding: 35px 0 70px;
+
+  border-top: 1px solid var(--cyan);
+  border-bottom: 1px solid rgba(8, 119, 201, 0.25);
 }
 
-.contact-hero-content > p:not(.project-detail-label) {
+/* Featured article number — 01, 02, 03... */
+
+.featured-insight-number {
+  padding-top: 8px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--cyan);
+}
+
+/* Featured article content */
+
+.featured-insight-content {
+  max-width: 850px;
+}
+
+.featured-insight-category {
+  margin: 0 0 25px;
+
+  font-family: 'Genos', sans-serif;
   font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--blue);
 }
 
-.contact-section {
-  padding: 60px 22px;
+.featured-insight-content h2 {
+  margin: 0 0 35px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(4rem, 7vw, 7rem);
+  font-weight: 400;
+  line-height: 0.95;
+
+  color: var(--navy);
 }
 
-.contact-form-column h2 {
-  font-size: 2rem;
+.featured-insight-deck {
+  max-width: 720px;
+  margin: 0 0 25px;
+
+  font-size: 1.4rem;
+  line-height: 1.55;
+
+  color: var(--navy);
 }
 
-.contact-form button {
-  width: 100%;
+.featured-insight-summary {
+  max-width: 680px;
+  margin: 0 0 40px;
+
+  font-size: 1.05rem;
+  line-height: 1.75;
+
+  color: var(--slate);
 }
 
-  /* HEADER */
+/* Featured article READ INSIGHT link */
 
-  header {
-    padding: 18px 20px;
-    gap: 12px;
-  }
+.featured-insight-link {
+  display: inline-block;
 
-  .brand img {
-    width: 120px;
-  }
-
-  nav {
-    gap: 10px 16px;
-  }
-
-  nav a {
-    font-size: 1.05rem;
-  }
-
-
-  /* HOME */
-
-  .hero,
-  .projects,
-  .approach {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-header h2 {
-    font-size: 2.25rem;
-  }
-
-  .projects-header .marked-text {
-    grid-template-columns: 36px 1fr;
-    column-gap: 12px;
-  }
-
-
-  /* ABOUT */
-
-  .about-hero,
-  .about-story,
-  .about-pillars,
-  .about-closing {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-
-  .about-hero h1 {
-    font-size: 2.8rem;
-    line-height: 1.08;
-  }
-
-  .story-content {
-    grid-template-columns: 36px 1fr;
-    column-gap: 12px;
-  }
-
-  .text-marker {
-    font-size: 3rem;
-  }
-
-  .story-copy h2,
-  .closing-copy h2 {
-    font-size: 2rem;
-  }
-
-  .about-closing {
-    display: block;
-  }
-
-  .closing-marker {
-    margin-bottom: 20px;
-  }
-
-  .network-graphic,
-  .story-network,
-  .closing-network {
-    opacity: 0.12;
-  }
-
-
-  /* AREAS OF FOCUS */
-
-  .focus-hero,
-  .focus-areas,
-  .focus-systems {
-    padding-left: 22px;
-    padding-right: 22px;
-  }
-
-  .focus-hero h1 {
-    font-size: 2.8rem;
-  }
-
-  .focus-hero-network {
-    right: -180px;
-    bottom: 60px;
-
-    width: 500px;
-
-    opacity: 0.14;
-  }
-
-  .focus-card {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  .focus-card h2 {
-    font-size: 1.8rem;
-  }
-
-  .focus-systems h2 {
-    font-size: 2.2rem;
-  }
-
-  .focus-systems-visual {
-    min-height: 240px;
-  }
-
-
-  /* CLINICAL TRIAL PROJECT */
-
-  .project-detail-hero {
-    padding: 64px 22px;
-  }
-
-  .project-detail-label {
-    font-size: 0.9rem;
-  }
-
-  .project-detail-hero h1 {
-    font-size: 2.4rem;
-    line-height: 1.18;
-
-    overflow-wrap: break-word;
-  }
-
-  .project-detail-hero p {
-    margin-top: 24px;
-
-    font-size: 1rem;
-    line-height: 1.6;
-  }
-
-
-  /* 2 × 2 snapshot instead of giant stacked list */
-
-  .project-snapshot {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 28px 16px;
-
-    padding: 42px 22px;
-  }
-
-  .snapshot-number {
-    font-size: 1.8rem;
-  }
-
-  .snapshot-label {
-    font-size: 0.8rem;
-    line-height: 1.3;
-  }
-
-
-  /* PROJECT TEXT SECTIONS */
-
-  .project-problem,
-  .project-data-model,
-  .project-evolution {
-    padding: 56px 22px;
-  }
-
-  .project-section-heading {
-    grid-template-columns: 30px minmax(0, 1fr);
-    column-gap: 10px;
-  }
-
-  .project-section-heading h2 {
-    margin-bottom: 18px;
-
-    font-size: 1.75rem;
-    line-height: 1.2;
-  }
-
-  .project-section-heading p {
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-
-
-  /* WORKFLOW — KEEP IT READABLE */
-
-  .project-workflow-visual {
-    overflow-x: auto;
-
-    padding: 40px 22px;
-
-    -webkit-overflow-scrolling: touch;
-  }
-
-  .project-workflow-visual img {
-    width: 900px;
-    max-width: none;
-
-    margin: 0;
-  }
-
-
-  /* FINDINGS */
-
-  .project-findings {
-    padding: 60px 22px;
-  }
-
-  .project-findings > h2 {
-    margin-bottom: 36px;
-
-    font-size: 2rem;
-    line-height: 1.2;
-    text-align: left;
-  }
-
-  .findings-grid {
-    grid-template-columns: 1fr;
-    gap: 10px;
-  }
-
-  .finding-card {
-    padding: 28px 0;
-  }
-
-  .finding-card h3 {
-    font-size: 1.45rem;
-    line-height: 1.3;
-  }
-
-  .finding-card p {
-    font-size: 1rem;
-    line-height: 1.65;
-  }
-
-
-  /* FUTURE STATE */
-
-  .project-future-state {
-    padding: 60px 22px;
-  }
-
-  .project-future-state h2 {
-    font-size: 2rem;
-  }
-
-  .future-state-flow {
-    flex-direction: column;
-    gap: 12px;
-
-    font-size: 1.15rem;
-  }
-
-
-  /* TECHNICAL */
-
-  .project-technical {
-    padding: 60px 22px;
-  }
-
-  .project-technical h2 {
-    font-size: 1.8rem;
-    line-height: 1.35;
-  }
-
-
-  /* FOOTER */
-
-  .site-footer {
-    grid-template-columns: 1fr;
-    gap: 32px;
-
-    padding: 40px 22px 24px;
-  }
-
-  .footer-contact-column {
-    padding-top: 0;
-  }
-
-  .footer-publication-column {
-    grid-column: auto;
-
-    padding-left: 0;
-    padding-top: 28px;
-
-    border-left: 0;
-    border-top: 1px solid rgba(0, 184, 240, 0.25);
-  }
-
-  .footer-copyright {
-    grid-column: auto;
-  }
-
-  .footer-newsletter iframe {
-    width: 100%;
-    height: 320px;
-  }
-  /* FOOTER ICONS — PHONE */
-
-.footer-contact-item img {
-  width: 32px;
-  height: 32px;
-  max-width: 32px;
-  flex: 0 0 32px;
-}
-
-.footer-contact-icon {
-  width: 32px;
-  flex: 0 0 32px;
-  font-size: 1.3rem;
-}
-  /* CLINICAL TRIAL PROJECT — PHONE */
-
-.project-detail-hero {
-  padding: 60px 22px;
-}
-
-.project-detail-hero h1 {
-  font-size: 2.35rem;
-  line-height: 1.15;
-}
-
-.project-detail-hero p {
+  font-family: 'Genos', sans-serif;
   font-size: 1rem;
-  line-height: 1.6;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+
+  color: var(--blue);
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    color 0.2s ease;
+}
+
+.featured-insight-link:hover {
+  color: var(--cyan);
+  transform: translateX(6px);
+}
+
+/* Large decorative < marker */
+
+.featured-insight-marker {
+  align-self: center;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 7rem;
+  font-weight: 300;
+  line-height: 1;
+
+  color: var(--cyan);
+
+  opacity: 0.9;
 }
 
 
-/* PROJECT SNAPSHOT */
+/* ========================================
+   INSIGHTS 03 — LIBRARY HEADER
+   Introduction to the full Insights archive.
+   ======================================== */
 
-.project-snapshot {
-  grid-template-columns: repeat(2, 1fr);
-  gap: 28px 16px;
+.insights-library {
+  padding: 100px 80px;
 
-  padding: 42px 22px;
+  background-color: var(--ice-blue);
 }
 
-.snapshot-number {
+.insights-library-header {
+  max-width: 850px;
+  margin: 0 auto 45px;
+}
+
+.insights-library-header h2 {
+  margin: 0 0 25px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--navy);
+}
+
+.insights-library-header > p:last-child {
+  max-width: 700px;
+  margin: 0;
+
+  font-size: 1.1rem;
+  line-height: 1.7;
+
+  color: var(--slate);
+}
+
+
+/* ========================================
+   INSIGHTS 04 — CATEGORY NAVIGATION
+   Permanent editorial categories.
+   Currently visual only; can become filters later.
+   ======================================== */
+
+.insights-categories {
+  max-width: 1100px;
+  margin: 0 auto 65px;
+  padding: 22px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 18px 36px;
+
+  border-top: 1px solid rgba(8, 119, 201, 0.25);
+  border-bottom: 1px solid rgba(8, 119, 201, 0.25);
+}
+
+.insights-categories span {
+  position: relative;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--deep-blue);
+}
+
+.insights-categories span:not(:last-child)::after {
+  content: "/";
+
+  position: absolute;
+  right: -22px;
+
+  color: var(--cyan);
+}
+
+
+/* ========================================
+   INSIGHTS 05 — ARTICLE CARDS
+   Published Insights archive.
+   Visual sibling of the Projects cards.
+   ======================================== */
+
+.insights-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+}
+
+.insight-card {
+  position: relative;
+
+  min-height: 340px;
+  padding: 38px 40px;
+
+  display: flex;
+  flex-direction: column;
+
+  background-color: var(--off-white);
+  color: var(--navy);
+
+  border-radius: 8px;
+  border-top: 1px solid rgba(0, 184, 240, 0.65);
+}
+
+.insight-card-number {
+  display: block;
+  margin-bottom: 22px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 1rem;
+  letter-spacing: 0.12em;
+
+  color: var(--cyan);
+}
+
+.insight-card-category {
+  margin: 0 0 18px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--blue);
+}
+
+.insight-card h3 {
+  margin: 0 0 18px;
+
+  font-family: 'Gugi', sans-serif;
   font-size: 1.8rem;
-}
-
-.snapshot-label {
-  font-size: 0.8rem;
-  line-height: 1.3;
-}
-
-
-/* PROJECT TEXT SECTIONS */
-
-.project-problem,
-.project-data-model,
-.project-evolution {
-  padding: 55px 22px;
-}
-
-.project-section-heading {
-  grid-template-columns: 30px 1fr;
-  column-gap: 10px;
-}
-
-.project-section-heading h2 {
-  font-size: 1.8rem;
+  font-weight: 400;
   line-height: 1.2;
+
+  color: var(--navy);
 }
 
-.project-section-heading p {
+.insight-card > p:not(.insight-card-category) {
+  margin: 0 0 28px;
+
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: 1.65;
+
+  color: var(--slate);
+}
+
+.insight-card a {
+  display: inline-block;
+
+  margin-top: auto;
+
+  font-family: 'Genos', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.insight-card a:hover {
+  color: var(--cyan);
 }
 
 
-/* WORKFLOW GRAPHIC */
+/* =========================================================
+   INSIGHT ARTICLE PAGE
+   Individual Hermeneia Insights article
+   Example: insight-turnaround-time.html
+   ========================================================= */
 
-.project-workflow-visual {
-  overflow-x: auto;
-  padding: 40px 22px;
+
+/* =========================================================
+   ARTICLE 01 — HERO
+   Category / title / subtitle / author metadata
+   ========================================================= */
+
+.insight-article-hero {
+  padding: 100px 80px 90px;
+
+  background-color: var(--deep-blue);
+  color: var(--off-white);
 }
 
-.project-workflow-visual img {
-  width: 850px;
+.insight-article-hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 40px;
+  align-items: start;
+
+  padding-top: 28px;
+
+  border-top: 1px solid rgba(0, 184, 240, 0.75);
+}
+
+.insight-article-number {
+  padding-top: 8px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+
+  color: var(--cyan);
+}
+
+.insight-article-hero-content {
+  max-width: 900px;
+}
+
+.insight-article-category {
+  margin: 0 0 28px !important;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--cyan) !important;
+}
+
+.insight-article-hero h1 {
+  margin: 0;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(4.5rem, 7vw, 7.5rem);
+  font-weight: 400;
+  line-height: 0.93;
+
+  color: var(--off-white);
+}
+
+.insight-article-subtitle {
+  max-width: 720px !important;
+  margin: 34px 0 0 !important;
+
+  font-size: 1.45rem !important;
+  line-height: 1.5 !important;
+
+  color: var(--ice-blue) !important;
+}
+
+/* AUTHOR + DATE */
+
+.insight-article-meta {
+  margin-top: 48px;
+  padding-top: 28px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+
+  border-top: 1px solid rgba(217, 242, 251, 0.18);
+}
+
+.insight-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.insight-author-image {
+  width: 48px;
+  height: 48px;
+
+  border-radius: 50%;
+  object-fit: cover;
+
+  border: 1px solid rgba(0, 184, 240, 0.55);
+}
+
+.insight-author > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.insight-author-label {
+  font-family: 'Genos', sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--cyan);
+}
+
+.insight-author-name {
+  font-size: 0.95rem;
+  color: var(--off-white);
+}
+
+.insight-publication-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--ice-blue);
+}
+
+
+/* =========================================================
+   SHARED ARTICLE CONTENT COLUMN
+   Controls readable text width throughout article
+   ========================================================= */
+
+.insight-article-content {
+  width: 100%;
+  max-width: 820px;
+
+  margin: 0 auto;
+}
+
+.insight-article-content p {
   max-width: none;
 }
 
 
-/* FINDINGS */
+/* =========================================================
+   ARTICLE 02 — THE QUESTION
+   Opening editorial setup
+   ========================================================= */
 
-.project-findings {
-  padding: 60px 22px;
+.insight-question {
+  padding: 100px 80px 50px;
+
+  background-color: var(--off-white);
 }
 
-.project-findings > h2 {
-  font-size: 2rem;
-  line-height: 1.2;
+.insight-section-label {
+  margin: 0 0 30px !important;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--blue) !important;
 }
 
-.findings-grid {
-  grid-template-columns: 1fr;
-  gap: 10px;
+.insight-opening {
+  margin: 0 0 28px !important;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(2rem, 3.5vw, 3rem) !important;
+  font-weight: 400;
+  line-height: 1.3 !important;
+
+  color: var(--navy) !important;
 }
 
-.finding-card {
-  padding: 28px 0;
+.insight-question .insight-article-content > p:not(
+  .insight-section-label,
+  .insight-opening,
+  .insight-emphasis
+) {
+  margin: 0 0 22px !important;
+
+  font-size: 1.12rem !important;
+  line-height: 1.8 !important;
+
+  color: var(--slate);
 }
 
-.finding-card h3 {
-  font-size: 1.45rem;
+.insight-emphasis {
+  margin: 36px 0 !important;
+  padding-left: 24px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1.35rem !important;
+  font-weight: 600;
+  line-height: 1.55 !important;
+
+  color: var(--navy) !important;
+
+  border-left: 3px solid var(--cyan);
 }
 
-.finding-card p {
+
+/* =========================================================
+   ARTICLE 03 / 05 / 06 / 07 — ANALYSIS SECTIONS
+   Reusable numbered editorial sections
+   ========================================================= */
+
+.insight-article-section {
+  padding: 100px 80px;
+
+  background-color: var(--off-white);
+}
+
+.insight-article-section-alt {
+  background-color: var(--ice-blue);
+}
+
+.insight-section-number {
+  margin-bottom: 18px;
+
+  font-family: 'Gugi', sans-serif;
   font-size: 1rem;
+  letter-spacing: 0.14em;
+
+  color: var(--cyan);
+}
+
+.insight-article-section h2 {
+  margin: 0 0 38px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(2.3rem, 4vw, 3.8rem);
+  font-weight: 400;
+  line-height: 1.1;
+
+  color: var(--navy);
+}
+
+.insight-article-section .insight-article-content > p {
+  margin: 0 0 24px;
+
+  font-size: 1.12rem;
+  line-height: 1.8;
+
+  color: var(--slate);
+}
+
+.insight-article-section .insight-emphasis {
+  color: var(--navy) !important;
 }
 
 
-/* FUTURE STATE */
+/* =========================================================
+   ARTICLE COMPONENT — WORKFLOW EXAMPLE
+   Timeline embedded inside article
+   ========================================================= */
 
-.project-future-state {
-  padding: 60px 22px;
+.insight-workflow-example {
+  margin: 48px 0;
+
+  display: grid;
+  grid-template-columns:
+    minmax(110px, 1fr)
+    auto
+    minmax(110px, 1fr)
+    auto
+    minmax(110px, 1fr)
+    auto
+    minmax(110px, 1fr);
+
+  gap: 18px;
+  align-items: center;
+
+  padding: 32px 0;
+
+  border-top: 1px solid rgba(8, 119, 201, 0.25);
+  border-bottom: 1px solid rgba(8, 119, 201, 0.25);
 }
 
-.project-future-state h2 {
-  font-size: 2rem;
+.insight-workflow-example > span:not(:nth-of-type(2n)) {
+  display: none;
 }
 
-.future-state-flow {
-  flex-direction: column;
-  gap: 12px;
+.insight-workflow-example strong {
+  font-family: 'Genos', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
 
-  font-size: 1.15rem;
+  color: var(--navy);
+}
+
+.insight-workflow-example > span {
+  font-family: 'Genos', sans-serif;
+  color: var(--cyan);
 }
 
 
-/* TECHNICAL */
+/* =========================================================
+   ARTICLE COMPONENT — METRIC COMPARISON
+   Two analytical definitions side-by-side
+   ========================================================= */
 
-.project-technical {
-  padding: 60px 22px;
+.insight-metric-grid {
+  margin: 50px 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 28px;
 }
 
-.project-technical h2 {
-  font-size: 1.8rem;
-  line-height: 1.3;
+.insight-metric-card {
+  padding: 34px;
+
+  background-color: var(--ice-blue);
+
+  border-top: 2px solid var(--cyan);
 }
+
+.insight-metric-label {
+  margin: 0 0 18px !important;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 1rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--blue) !important;
+}
+
+.insight-metric-formula {
+  margin: 0 0 20px !important;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 1.35rem !important;
+  line-height: 1.35 !important;
+
+  color: var(--navy) !important;
+}
+
+.insight-metric-card > p:last-child {
+  margin: 0 !important;
+
+  font-size: 1rem !important;
+  line-height: 1.65 !important;
+
+  color: var(--slate);
+}
+
+
+/* =========================================================
+   ARTICLE 04 — OBSERVATION CALLOUT
+   Large visual break in article
+   ========================================================= */
+
+.insight-callout {
+  padding: 90px 80px;
+
+  background-color: var(--deep-blue);
+}
+
+.insight-callout-inner {
+  max-width: 1050px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 90px minmax(0, 1fr);
+  gap: 35px;
+  align-items: center;
+}
+
+.insight-callout-marker {
+  font-family: 'Genos', sans-serif;
+  font-size: 6rem;
+  font-weight: 300;
+
+  color: var(--cyan);
+}
+
+.insight-callout p {
+  max-width: 850px;
+  margin: 0;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(2.3rem, 4.5vw, 4.3rem);
+  font-weight: 400;
+  line-height: 1.15;
+
+  color: var(--off-white);
+}
+
+
+/* =========================================================
+   ARTICLE COMPONENT — NORMAL / EXCEPTION
+   Operational comparison
+   ========================================================= */
+
+.insight-comparison {
+  margin: 45px 0;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  border-top: 1px solid rgba(8, 119, 201, 0.35);
+  border-bottom: 1px solid rgba(8, 119, 201, 0.35);
+}
+
+.insight-comparison > div {
+  padding: 34px;
+}
+
+.insight-comparison > div:first-child {
+  border-right: 1px solid rgba(8, 119, 201, 0.25);
+}
+
+.insight-comparison-label {
+  display: block;
+  margin-bottom: 16px;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--blue);
+}
+
+.insight-comparison > div:last-child .insight-comparison-label {
+  color: var(--cyan);
+}
+
+.insight-comparison p {
+  margin: 0 !important;
+
+  font-size: 1.05rem !important;
+  line-height: 1.65 !important;
+
+  color: var(--navy) !important;
+}
+
+
+/* =========================================================
+   ARTICLE 08 — ANALYTICAL FRAME
+   Structured summary / reusable analytical component
+   ========================================================= */
+
+.insight-analytical-frame {
+  padding: 100px 80px;
+
+  background-color: var(--deep-blue);
+  color: var(--off-white);
+}
+
+.insight-analytical-frame .insight-section-label {
+  color: var(--cyan) !important;
+}
+
+.insight-frame-grid {
+  margin-top: 40px;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 36px 50px;
+}
+
+.insight-frame-item {
+  padding: 30px 0;
+
+  border-top: 1px solid rgba(0, 184, 240, 0.55);
+}
+
+.insight-frame-item > span {
+  display: block;
+  margin-bottom: 18px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 0.95rem;
+
+  color: var(--cyan);
+}
+
+.insight-frame-item h3 {
+  margin: 0 0 18px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 400;
+  line-height: 1.25;
+
+  color: var(--off-white);
+}
+
+.insight-frame-item p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.7;
+
+  color: var(--ice-blue);
+}
+
+
+/* =========================================================
+   ARTICLE 09 — CLOSING OBSERVATION
+   Final argument / synthesis
+   ========================================================= */
+
+.insight-closing {
+  padding: 110px 80px;
+
+  background-color: var(--off-white);
+}
+
+.insight-closing h2 {
+  margin: 0 0 35px;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  font-weight: 400;
+
+  color: var(--navy);
+}
+
+.insight-closing .insight-article-content > p:not(
+  .insight-section-label,
+  .insight-closing-line
+) {
+  margin: 0 0 24px;
+
+  font-size: 1.12rem;
+  line-height: 1.8;
+
+  color: var(--slate);
+}
+
+.insight-closing-line {
+  margin: 50px 0 0 !important;
+  padding: 30px 0 0;
+
+  font-family: 'Gugi', sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem) !important;
+  line-height: 1.35 !important;
+
+  color: var(--navy) !important;
+
+  border-top: 1px solid var(--cyan);
+}
+
+
+/* =========================================================
+   ARTICLE 10 — ARTICLE FOOTER
+   Categories / related project / return to Insights
+   ========================================================= */
+
+.insight-article-footer {
+  padding: 70px 80px;
+
+  background-color: var(--ice-blue);
+}
+
+.insight-article-footer-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
+  gap: 50px;
+}
+
+.insight-footer-group {
+  padding-top: 20px;
+
+  border-top: 1px solid rgba(8, 119, 201, 0.3);
+}
+
+.insight-footer-label {
+  margin: 0 0 12px !important;
+
+  font-family: 'Genos', sans-serif;
+  font-size: 0.85rem !important;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+
+  color: var(--blue) !important;
+}
+
+.insight-footer-group > p:last-child {
+  margin: 0;
+
+  font-family: 'Genos', sans-serif;
+  font-weight: 600;
+
+  color: var(--navy);
+}
+
+.insight-footer-group a {
+  font-family: 'Genos', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+
+  color: var(--navy);
+  text-decoration: none;
+}
+
+.insight-footer-group a:hover {
+  color: var(--blue);
+}
+
+.insight-footer-navigation {
+  grid-column: 1 / -1;
+
+  padding-top: 30px;
+
+  border-top: 1px solid rgba(8, 119, 201, 0.3);
+}
+
+.insight-footer-navigation a {
+  font-family: 'Genos', sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+
+  color: var(--blue);
+  text-decoration: none;
+}
+
+.insight-footer-navigation a:hover {
+  color: var(--cyan);
+}
+
+
+/* =========================================================
+   INSIGHT ARTICLE — TABLET
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .insight-article-hero,
+  .insight-question,
+  .insight-article-section,
+  .insight-callout,
+  .insight-analytical-frame,
+  .insight-closing,
+  .insight-article-footer {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  .insight-article-hero-inner {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .insight-article-hero h1 {
+    font-size: clamp(3.8rem, 10vw, 6rem);
+  }
+
+  .insight-workflow-example {
+    grid-template-columns: 1fr;
+    gap: 12px;
+
+    text-align: left;
+  }
+
+  .insight-workflow-example > span {
+    display: block;
+  }
+
+  .insight-metric-grid,
+  .insight-comparison,
+  .insight-frame-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .insight-comparison > div:first-child {
+    border-right: 0;
+    border-bottom: 1px solid rgba(8, 119, 201, 0.25);
+  }
+
+  .insight-callout-inner {
+    grid-template-columns: 55px minmax(0, 1fr);
+    gap: 24px;
+  }
+
+  .insight-callout-marker {
+    font-size: 4.5rem;
+  }
+
+  .insight-article-footer-inner {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   INSIGHT ARTICLE — PHONE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+  .insight-article-hero {
+    padding: 65px 22px 60px;
+  }
+
+  .insight-article-hero-inner {
+    display: block;
+
+    padding-top: 20px;
+  }
+
+  .insight-article-number {
+    margin-bottom: 22px;
+  }
+
+  .insight-article-category {
+    font-size: 0.85rem !important;
+  }
+
+  .insight-article-hero h1 {
+    font-size: 3rem;
+    line-height: 1.02;
+  }
+
+  .insight-article-subtitle {
+    margin-top: 26px !important;
+
+    font-size: 1.15rem !important;
+  }
+
+  .insight-article-meta {
+    margin-top: 35px;
+
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .insight-publication-meta {
+    font-size: 0.8rem;
+  }
+
+
+  /* ARTICLE BODY */
+
+  .insight-question,
+  .insight-article-section,
+  .insight-analytical-frame,
+  .insight-closing {
+    padding: 65px 22px;
+  }
+
+  .insight-opening {
+    font-size: 1.8rem !important;
+  }
+
+  .insight-question .insight-article-content > p:not(
+    .insight-section-label,
+    .insight-opening,
+    .insight-emphasis
+  ),
+  .insight-article-section .insight-article-content > p,
+  .insight-closing .insight-article-content > p:not(
+    .insight-section-label,
+    .insight-closing-line
+  ) {
+    font-size: 1rem !important;
+    line-height: 1.7 !important;
+  }
+
+  .insight-emphasis {
+    margin: 30px 0 !important;
+
+    font-size: 1.15rem !important;
+  }
+
+  .insight-article-section h2 {
+    font-size: 2rem;
+    line-height: 1.18;
+  }
+
+
+  /* WORKFLOW */
+
+  .insight-workflow-example {
+    margin: 35px 0;
+    padding: 25px 0;
+  }
+
+
+  /* METRIC CARDS */
+
+  .insight-metric-grid {
+    margin: 38px 0;
+    gap: 20px;
+  }
+
+  .insight-metric-card {
+    padding: 26px 22px;
+  }
+
+
+  /* CALLOUT */
+
+  .insight-callout {
+    padding: 70px 22px;
+  }
+
+  .insight-callout-inner {
+    display: block;
+  }
+
+  .insight-callout-marker {
+    display: block;
+
+    margin-bottom: 18px;
+
+    font-size: 4rem;
+  }
+
+  .insight-callout p {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+
+  /* NORMAL / EXCEPTION */
+
+  .insight-comparison {
+    margin: 35px 0;
+  }
+
+  .insight-comparison > div {
+    padding: 28px 0;
+  }
+
+
+  /* ANALYTICAL FRAME */
+
+  .insight-frame-grid {
+    margin-top: 30px;
+    gap: 10px;
+  }
+
+  .insight-frame-item {
+    padding: 28px 0;
+  }
+
+  .insight-frame-item h3 {
+    font-size: 1.45rem;
+  }
+
+
+  /* CLOSING */
+
+  .insight-closing-line {
+    margin-top: 40px !important;
+
+    font-size: 1.8rem !important;
+  }
+
+
+  /* ARTICLE FOOTER */
+
+  .insight-article-footer {
+    padding: 55px 22px;
+  }
+
 }

@@ -1,22 +1,69 @@
+# Hermeneia Project Page Template
+
+Canonical visual reference for all project case-study pages.
+
+## Preserve
+- shared class names
+- section order
+- video hero treatment
+- findings-grid structure
+- technical implementation structure
+- canonical footer
+
+## May vary
+- project-specific headings
+- findings vs analytical questions
+- future-state content
+- metrics
+- workflow image
+- repository link
+
+## Usage
+Copy the HTML below into a new project `.html` file.
+Do not edit this template to create a live page.
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Clinical Trial Patient Recruitment System | Hermeneia</title>
+
+  <title>PROJECT TITLE | Hermeneia</title>
+
   <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
 
   <!-- ========================================
-       HEADER / NAVIGATION
+       PROJECT PAGE TEMPLATE
+
+       PRESERVE:
+       - shared class names
+       - section order
+       - footer structure
+       - project hero treatment
+       - findings grid structure
+       - technical implementation structure
+
+       CHANGE:
+       - project-specific content
+       - metrics
+       - headings where appropriate
+       - workflow image
+       - repository URL
+       ======================================== -->
+
+
+  <!-- ========================================
+       HEADER
        ======================================== -->
 
   <header>
+
     <a class="brand" href="index.html">
-      <img src="images/hermeneia-logo.png" alt="Hermeneia Consulting logo">
+      <img src="images/hermeneia-logo.png" alt="Hermeneia logo">
     </a>
 
     <nav>
@@ -26,7 +73,9 @@
       <a href="insights.html">INSIGHTS</a>
       <a href="contact.html">CONTACT</a>
     </nav>
+
   </header>
+
 
   <main>
 
@@ -35,29 +84,32 @@
          ======================================== -->
 
     <section class="project-detail-hero">
-        <video class="project-hero-video" autoplay muted loop playsinline>
-  <source src="video/hero-network.mp4" type="video/mp4">
-</video>
 
-<div class="project-hero-overlay"></div>
+      <video class="project-hero-video" autoplay muted loop playsinline>
+        <source src="video/hero-network.mp4" type="video/mp4">
+      </video>
+
+      <div class="project-hero-overlay"></div>
 
       <div class="project-detail-copy">
 
-        <p class="project-detail-label">CLINICAL TRIAL OPERATIONS</p>
+        <p class="project-detail-label">
+          PROJECT AREA / DOMAIN
+        </p>
 
         <h1>
-          A Workflow and Data Analysis<br>
-          of Clinical Trial Recruitment Efficiency<span class="cursor"></span>
+          PROJECT CASE STUDY TITLE<span class="cursor"></span>
         </h1>
 
         <p>
-          From fragmented operational tracking to a more centralized
-          model for workflow visibility, analysis, and action.
+          Concise project framing: what operational or technical problem
+          this case study investigates.
         </p>
 
       </div>
 
     </section>
+
 
     <!-- ========================================
          PROJECT SNAPSHOT
@@ -66,26 +118,27 @@
     <section class="project-snapshot">
 
       <div class="snapshot-item">
-        <span class="snapshot-number">250</span>
-        <span class="snapshot-label">SYNTHETIC PATIENTS</span>
+        <span class="snapshot-number">00</span>
+        <span class="snapshot-label">METRIC ONE</span>
       </div>
 
       <div class="snapshot-item">
-        <span class="snapshot-number">15–20</span>
-        <span class="snapshot-label">CLINICAL TRIAL SITES</span>
+        <span class="snapshot-number">00</span>
+        <span class="snapshot-label">METRIC TWO</span>
       </div>
 
       <div class="snapshot-item">
-        <span class="snapshot-number">MySQL</span>
-        <span class="snapshot-label">RELATIONAL ANALYSIS</span>
+        <span class="snapshot-number">00</span>
+        <span class="snapshot-label">METRIC THREE</span>
       </div>
 
       <div class="snapshot-item">
-        <span class="snapshot-number">7+</span>
-        <span class="snapshot-label">INITIAL BUSINESS QUESTIONS</span>
+        <span class="snapshot-number">00</span>
+        <span class="snapshot-label">METRIC FOUR</span>
       </div>
 
     </section>
+
 
     <!-- ========================================
          THE OPERATIONAL PROBLEM
@@ -94,40 +147,43 @@
     <section class="project-problem">
 
       <div class="project-section-heading">
+
         <span class="text-marker">&lt;</span>
 
         <div>
+
           <h2>THE OPERATIONAL PROBLEM</h2>
 
           <p>
-            Patient recruitment, ROI authorization, and medical-record
-            retrieval were managed across separate trackers, portals,
-            spreadsheets, and communication channels.
+            Describe the real-world workflow problem, limitation,
+            fragmentation, or operational question.
           </p>
 
           <p>
-            The workflow worked, but visibility was fragmented.
-            Information had to be maintained across multiple tools,
-            handoffs depended on manual communication, and operational
-            knowledge often lived outside the core workflow.
+            Add a second paragraph when needed to explain complexity,
+            handoffs, systems, actors, or workflow variation.
           </p>
+
         </div>
+
       </div>
 
     </section>
 
+
     <!-- ========================================
-         CURRENT-STATE WORKFLOW
+         CURRENT-STATE WORKFLOW / VISUAL
          ======================================== -->
 
     <section class="project-workflow-visual">
 
       <img
-        src="images/clinical-trial-current-state-workflow.png"
-        alt="Current-state clinical trial recruitment and medical-record retrieval workflow"
+        src="images/PROJECT-WORKFLOW-IMAGE.png"
+        alt="Description of the project workflow"
       >
 
     </section>
+
 
     <!-- ========================================
          FROM WORKFLOW TO DATA MODEL
@@ -136,95 +192,165 @@
     <section class="project-data-model">
 
       <div class="project-section-heading">
+
         <span class="text-marker">&lt;</span>
 
         <div>
+
           <h2>FROM WORKFLOW TO DATA MODEL</h2>
 
           <p>
-            The relational model was designed around the way the
-            operation actually worked. Recruitment, ROI authorization,
-            medical-record retrieval, vendors, facilities, and sites
-            were separated into related entities so each operational
-            stage could be analyzed without losing the full patient journey.
+            Explain how the operational workflow informed the relational
+            model, analytical structure, or technical representation.
           </p>
+
+          <p>
+            This heading may change when the project requires different
+            language, but preserve the component and visual treatment.
+          </p>
+
         </div>
+
       </div>
 
     </section>
 
+
     <!-- ========================================
-         WHAT THE DATA REVEALED
+         FINDINGS / ANALYTICAL QUESTIONS
          ======================================== -->
 
     <section class="project-findings">
 
-      <h2>WHAT THE DATA REVEALED</h2>
+      <h2>
+        WHAT THE DATA REVEALED
+      </h2>
+
+      <!--
+        Alternate project-stage heading:
+        WHAT THE MODEL IS DESIGNED TO EXPLORE
+      -->
 
       <div class="findings-grid">
 
         <article class="finding-card">
+
           <span class="finding-number">01</span>
-          <h3>VOLUME DID NOT EQUAL QUALITY</h3>
+
+          <h3>FINDING / QUESTION ONE</h3>
+
           <p>
-            Equal referral volume masked meaningful differences in
-            vendor conversion and patient progression.
+            Supporting interpretation or analytical question.
           </p>
+
         </article>
 
+
         <article class="finding-card">
+
           <span class="finding-number">02</span>
-          <h3>TURNAROUND VARIED BY FACILITY</h3>
+
+          <h3>FINDING / QUESTION TWO</h3>
+
           <p>
-            Medical-record turnaround times differed substantially,
-            creating different levels of operational risk.
+            Supporting interpretation or analytical question.
           </p>
+
         </article>
 
+
         <article class="finding-card">
+
           <span class="finding-number">03</span>
-          <h3>PIPELINE DROPOFF BECAME VISIBLE</h3>
+
+          <h3>FINDING / QUESTION THREE</h3>
+
           <p>
-            Connecting recruitment and retrieval stages exposed where
-            patients stopped progressing through the workflow.
+            Supporting interpretation or analytical question.
           </p>
+
         </article>
 
+
         <article class="finding-card">
+
           <span class="finding-number">04</span>
-          <h3>THE WORKFLOW ITSELF NEEDED ATTENTION</h3>
+
+          <h3>FINDING / QUESTION FOUR</h3>
+
           <p>
-            SQL answered the initial questions, but the analysis also
-            revealed broader issues in handoffs, tracking, and visibility.
+            Supporting interpretation or analytical question.
           </p>
+
         </article>
 
       </div>
 
     </section>
 
+
     <!-- ========================================
-         FROM ANALYSIS TO PROCESS DESIGN
+         PROJECT EVOLUTION
          ======================================== -->
 
     <section class="project-evolution">
 
       <div class="project-section-heading">
+
         <span class="text-marker">&lt;</span>
 
         <div>
-          <h2>FROM ANALYSIS TO PROCESS DESIGN</h2>
+
+          <h2>PROJECT EVOLUTION</h2>
 
           <p>
-            The project evolved beyond retrospective SQL analysis.
-            The next phase evaluates current-state workflow gaps,
-            business rules, standardized procedures, and a future-state
-            model with stronger centralized visibility.
+            Explain how the project changed as the workflow, data,
+            or operational problem became better understood.
           </p>
+
+          <p>
+            Preserve this section when the evolution itself demonstrates
+            analytical or systems thinking.
+          </p>
+
         </div>
+
       </div>
 
     </section>
+
+
+    <!-- ========================================
+         FROM ANALYSIS / MODEL TO NEXT PHASE
+         ======================================== -->
+
+    <section class="project-evolution">
+
+      <div class="project-section-heading">
+
+        <span class="text-marker">&lt;</span>
+
+        <div>
+
+          <h2>FROM ANALYSIS TO PROCESS DESIGN</h2>
+
+          <!--
+            Alternate:
+            FROM MODEL TO OPERATIONAL ANALYSIS
+          -->
+
+          <p>
+            Explain how the project moves from analysis or modeling
+            toward operational application, validation, intervention,
+            or process improvement.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
 
     <!-- ========================================
          FUTURE-STATE DIRECTION
@@ -236,15 +362,18 @@
 
       <div class="future-state-flow">
 
-        <span>STANDARDIZED WORKFLOW</span>
+        <span>FUTURE STATE ONE</span>
         <span>→</span>
-        <span>CENTRALIZED VISIBILITY</span>
+
+        <span>FUTURE STATE TWO</span>
         <span>→</span>
-        <span>WORKFLOW AUTOMATION</span>
+
+        <span>FUTURE STATE THREE</span>
 
       </div>
 
     </section>
+
 
     <!-- ========================================
          TECHNICAL IMPLEMENTATION
@@ -252,31 +381,46 @@
 
     <section class="project-technical">
 
-      <div>
-        <p class="project-detail-label">TECHNICAL IMPLEMENTATION</p>
+      <div class="project-technical-content">
 
-        <h2>SQL · MySQL · Workflow Analysis · Process Design</h2>
-            
+        <p class="project-detail-label">
+          TECHNICAL IMPLEMENTATION
+        </p>
+
+        <h2>
+          TOOL · TOOL · METHOD · METHOD
+        </h2>
+
+        <!-- Optional project-specific technical context -->
+
+        <p class="technical-description">
+          Briefly explain how the tools and methods support the project.
+          Keep this concise and operationally relevant.
+        </p>
+
         <p class="technical-note">
-            Version controlled with Git + GitHub
+          Version controlled with Git + GitHub
         </p>
 
         <a
           class="hero-button"
-          href="https://github.com/hermeneia-consulting/clinical-trial-patient-recruitment-system"
+          href="PROJECT-REPOSITORY-URL"
           target="_blank"
           rel="noopener noreferrer"
         >
           VIEW TECHNICAL REPOSITORY
         </a>
+
       </div>
 
     </section>
 
   </main>
 
- <!-- ========================================
+
+  <!-- ========================================
        FOOTER
+       CANONICAL FOOTER — MATCH contact.html
        ======================================== -->
 
   <footer class="site-footer">
@@ -292,7 +436,10 @@
 
     <div class="footer-contact-column">
 
-      <a class="footer-contact-item" href="mailto:hello@askhermeneia.com">
+      <a
+        class="footer-contact-item"
+        href="mailto:hello@askhermeneia.com"
+      >
         <span class="footer-contact-icon">✉</span>
         <span>hello@askhermeneia.com</span>
       </a>
@@ -322,13 +469,16 @@
 
     <div class="footer-publication-column">
 
-      <p class="footer-publication-label">THE HUMAN OVERRIDE</p>
+      <p class="footer-publication-label">
+        THE HUMAN OVERRIDE
+      </p>
 
       <p class="footer-publication-copy">
         Healthcare AI, governance, and the human layer.
       </p>
 
       <div class="footer-newsletter">
+
         <iframe
           src="https://thehumanoverride.substack.com/embed"
           width="480"
@@ -337,6 +487,7 @@
           frameborder="0"
           scrolling="no">
         </iframe>
+
       </div>
 
     </div>
@@ -349,5 +500,4 @@
   </footer>
 
 </body>
-
 </html>

@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Imaging Retrieval Operations | Hermeneia</title>
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
       <a href="about.html">ABOUT</a>
       <a href="areas-of-focus.html">AREAS OF FOCUS</a>
       <a href="index.html#projects">PROJECTS</a>
-      <a href="#">INSIGHTS</a>
+      <a href="insights.html">INSIGHTS</a>
       <a href="contact.html">CONTACT</a>
     </nav>
   </header>
@@ -177,41 +177,96 @@
 
   <div class="findings-grid">
 
-    <div class="finding-card">
+    <article class="finding-card">
+      <span class="finding-number">01</span>
       <h3>PLATFORM COVERAGE</h3>
-
       <p>
         How facility access to SaaS imaging platforms changes the retrieval
         pathways available to the operations team.
       </p>
-    </div>
+    </article>
 
-    <div class="finding-card">
+    <article class="finding-card">
+      <span class="finding-number">02</span>
       <h3>FACILITY BEHAVIOR</h3>
-
       <p>
         How differences in facility response patterns affect manual outreach,
         follow-up activity, and retrieval workload.
       </p>
-    </div>
+    </article>
 
-    <div class="finding-card">
+    <article class="finding-card">
+      <span class="finding-number">03</span>
       <h3>PHYSICAL-MEDIA FRICTION</h3>
-
       <p>
         Where facility processing, shipment method, and physical-media
         handling introduce additional time and variability into retrieval.
       </p>
-    </div>
+    </article>
 
-    <div class="finding-card">
+    <article class="finding-card">
+      <span class="finding-number">04</span>
       <h3>WORKLOAD CONCENTRATION</h3>
-
       <p>
         Which facilities, retrieval pathways, and request characteristics
         generate disproportionate operational effort.
       </p>
+    </article>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     FROM MODEL TO OPERATIONAL ANALYSIS
+     ======================================== -->
+
+<section class="project-evolution">
+
+  <div class="project-section-heading">
+    <span class="text-marker">&lt;</span>
+
+    <div>
+
+      <h2>FROM MODEL TO OPERATIONAL ANALYSIS</h2>
+
+      <p>
+        Once the synthetic operational environment is validated, the next
+        phase moves from workflow representation into comparative analysis.
+        Retrieval pathways can be evaluated across facilities, platforms,
+        follow-up patterns, shipment activity, and request complexity.
+      </p>
+
+      <p>
+        The goal is not simply to compare digital and physical retrieval.
+        It is to identify where operational effort concentrates, which
+        conditions introduce avoidable friction, and where better facility
+        knowledge or workflow design could reduce manual work.
+      </p>
+
     </div>
+
+  </div>
+
+</section>
+
+<!-- ========================================
+     FUTURE-STATE DIRECTION
+     ======================================== -->
+
+<section class="project-future-state">
+
+  <h2>FUTURE-STATE DIRECTION</h2>
+
+  <div class="future-state-flow">
+
+    <span>FACILITY INTELLIGENCE</span>
+    <span>→</span>
+
+    <span>PATHWAY SELECTION</span>
+    <span>→</span>
+
+    <span>REDUCED MANUAL FRICTION</span>
 
   </div>
 
@@ -221,83 +276,31 @@
      PROJECT EVOLUTION
      ======================================== -->
 
-<section class="project-future-state">
-
-  <div class="project-section-heading">
-    <span class="text-marker">&lt;</span>
-
-    <div>
-      <h2>PROJECT EVOLUTION</h2>
-
-      <p>
-        The project began as a small comparison of SaaS-based and
-        physical-media imaging retrieval. Mapping the workflow exposed a
-        more complex operational system than the original model could
-        represent.
-      </p>
-
-      <p>
-        The project was rebuilt around request-level activity,
-        facility-to-platform relationships, retrieval-event history,
-        physical shipments, and the independent progression of multiple
-        imaging requests within the same case.
-      </p>
-
-      <p>
-        The current phase uses Python to generate a reproducible
-        12-month synthetic operational environment that can be loaded
-        into MySQL for validation, exploratory analysis, and future
-        scenario modeling.
-      </p>
-
-    </div>
-  </div>
-
-</section>
-
-    <!-- ========================================
-     TECHNICAL IMPLEMENTATION
-     ======================================== -->
-
 <section class="project-technical">
 
-  <div class="project-section-heading">
-    <span class="text-marker">&lt;</span>
+  <div class="project-technical-content">
 
-    <div>
-      <h2>TECHNICAL IMPLEMENTATION</h2>
+    <p class="project-detail-label">
+      TECHNICAL IMPLEMENTATION
+    </p>
 
-      <p class="project-detail-label">
-        MySQL · Python · Relational Data Modeling · Synthetic Data Generation
-      </p>
+    <h2>
+      MySQL · Python · Relational Data Modeling · Synthetic Data Generation
+    </h2>
 
-      <p>
-        The project uses Python to generate a reproducible synthetic
-        operational dataset and MySQL to model the relationships between
-        patients, cases, facilities, imaging platforms, imaging requests,
-        retrieval events, and physical shipments.
-      </p>
+    <p class="technical-note">
+      Version controlled with Git + GitHub
+    </p>
 
-      <p>
-        Supporting documentation defines the current-state workflow,
-        business rules, relational model, and assumptions governing
-        synthetic data generation.
-      </p>
+    <a
+      class="hero-button"
+      href="https://github.com/hermeneia-consulting/imaging-retrieval-operations"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      VIEW TECHNICAL REPOSITORY
+    </a>
 
-      <p class="project-detail-label">
-        Version controlled with Git + GitHub
-      </p>
-
-      <a
-        class="project-github-link"
-        href="https://github.com/hermeneia-consulting/imaging-retrieval-operations"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        VIEW PROJECT ON GITHUB →
-      </a>
-
-    </div>
   </div>
 
 </section>

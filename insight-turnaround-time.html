@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>When Does the Clock Start? | Hermeneia Insights</title>
+
+  <meta
+    name="description"
+    content="An operational analysis of turnaround-time definitions in medical-record retrieval and how metric boundaries shape workflow decisions."
+  >
+
+  <link rel="stylesheet" href="style.css?v=6">
+</head>
+
+<body>
+
+  <!-- ========================================
+       HEADER / NAVIGATION
+       Shared site header
+       ======================================== -->
+
+  <header>
+
+    <a class="brand" href="index.html">
+      <img
+        src="images/hermeneia-logo.png"
+        alt="Hermeneia logo"
+      >
+    </a>
+
+    <nav>
+      <a href="about.html">ABOUT</a>
+      <a href="areas-of-focus.html">AREAS OF FOCUS</a>
+      <a href="index.html#projects">PROJECTS</a>
+      <a href="insights.html">INSIGHTS</a>
+      <a href="contact.html">CONTACT</a>
+    </nav>
+
+  </header>
+
+
+  <main class="insight-article">
+
+
+    <!-- ========================================
+         ARTICLE 01 — HERO
+         Category / title / deck / author metadata
+         ======================================== -->
+
+    <section class="insight-article-hero">
+
+      <div class="insight-article-hero-inner">
+
+        <div class="insight-article-number">
+          01
+        </div>
+
+
+        <div class="insight-article-hero-content">
+
+          <p class="insight-article-category">
+            OPERATIONS / MEDICAL RECORDS
+          </p>
+
+          <h1>
+            WHEN DOES<br>
+            THE CLOCK<br>
+            START?<span class="cursor"></span>
+          </h1>
+
+          <p class="insight-article-subtitle">
+            Measuring Turnaround in Medical Records Operations
+          </p>
+
+
+          <!-- AUTHOR / PUBLICATION META -->
+
+          <div class="insight-article-meta">
+
+            <div class="insight-author">
+
+              <img
+                 src="images/author-portrait.png"
+                alt="Mari M"
+                class="insight-author-image"
+              >
+
+              <div>
+                <span class="insight-author-label">
+                  WRITTEN BY
+                </span>
+
+                <span class="insight-author-name">
+                  Mari M
+                </span>
+              </div>
+
+            </div>
+
+
+            <div class="insight-publication-meta">
+              <span>AUG 15</span>
+              <span>/</span>
+              <span>3 MIN READ</span>
+            </div>
+            </div>
+</div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 02 — THE QUESTION
+         Opening problem / central operational question
+         ======================================== -->
+
+    <section class="insight-question">
+
+      <div class="insight-article-content">
+
+        <p class="insight-section-label">
+          &lt; THE QUESTION
+        </p>
+
+        <p class="insight-opening">
+          Turnaround time sounds like a simple metric. A request goes out.
+          Records come back. Count the days between the two.
+        </p>
+
+        <p class="insight-emphasis">
+          Except a sent request is not necessarily a received request.
+        </p>
+
+        <p>
+          Several years ago, while supporting medical-record retrieval for
+          a clinical trial patient recruitment program, I built an operational
+          tracker to monitor requests, follow-up activity, pending records,
+          and facility turnaround.
+        </p>
+
+        <p>
+          One metric that emerged—average turnaround time by facility—turned
+          out to depend on a question that wasn't obvious at first:
+          <strong>when does the clock actually start?</strong>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 03 — OPERATIONAL CONTEXT
+         First analytical section
+         ======================================== -->
+
+    <section class="insight-article-section">
+
+      <div class="insight-article-content">
+
+        <div class="insight-section-number">
+          01
+        </div>
+
+        <h2>
+          A SENT REQUEST IS NOT A RECEIVED REQUEST
+        </h2>
+
+        <p>
+          The retrieval workflow contained an event between sending a release
+          of information (ROI) and receiving records: confirmation that the
+          facility had actually received the request.
+        </p>
+
+
+        <!-- EXAMPLE TIMELINE -->
+
+        <div class="insight-workflow-example">
+
+          <span>MONDAY</span>
+          <strong>ROI SENT</strong>
+
+          <span>→</span>
+
+          <span>TUESDAY</span>
+          <strong>NOT RECEIVED</strong>
+
+          <span>→</span>
+
+          <span>WEDNESDAY</span>
+          <strong>RECEIPT CONFIRMED</strong>
+
+          <span>→</span>
+
+          <span>MONDAY</span>
+          <strong>RECORDS RECEIVED</strong>
+
+        </div>
+
+
+        <p>
+          Suppose an ROI is sent Monday. Tuesday, the facility reports it was
+          never received. It's resent, and receipt is confirmed Wednesday.
+          Records arrive the following Monday.
+        </p>
+
+        <p>
+          What was the turnaround time? There are at least two reasonable answers:
+        </p>
+
+
+        <!-- ========================================
+             ARTICLE COMPONENT — METRIC COMPARISON
+             Reusable analytical component
+             ======================================== -->
+
+        <div class="insight-metric-grid">
+
+          <div class="insight-metric-card">
+
+            <p class="insight-metric-label">
+              RETRIEVAL CYCLE TIME
+            </p>
+
+            <p class="insight-metric-formula">
+              ROI SENT → RECORDS RECEIVED
+            </p>
+
+            <p>
+              This measures the elapsed time experienced by the requesting
+              operation.
+            </p>
+
+          </div>
+
+
+          <div class="insight-metric-card">
+
+            <p class="insight-metric-label">
+              FACILITY PROCESSING TURNAROUND
+            </p>
+
+            <p class="insight-metric-formula">
+              ROI RECEIVED → RECORDS RECEIVED
+            </p>
+
+            <p>
+              This gets closer to measuring the time the facility actually
+              had the request in hand.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p>
+          Neither is inherently correct—they answer different questions.
+        </p>
+
+        <p>
+          Using the sent date to evaluate facility performance can attribute
+          transmission failure or resubmission time to the facility's workflow.
+          Using only confirmed receipt removes those delays from view, even
+          though they still affect the total time to get the records.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 04 — OBSERVATION CALLOUT
+         Large editorial statement
+         ======================================== -->
+
+    <aside class="insight-callout">
+
+      <div class="insight-callout-inner">
+
+        <span class="insight-callout-marker">
+          &lt;
+        </span>
+
+        <p>
+          THE CALCULATION IS EASY.<br>
+          DEFINING WHAT IT REPRESENTS IS HARDER.
+        </p>
+
+      </div>
+
+    </aside>
+
+
+    <!-- ========================================
+         ARTICLE 05 — ANALYSIS
+         Metric definition is process definition
+         ======================================== -->
+
+    <section class="insight-article-section">
+
+      <div class="insight-article-content">
+
+        <div class="insight-section-number">
+          02
+        </div>
+
+        <h2>
+          METRIC DEFINITION IS PROCESS DEFINITION
+        </h2>
+
+        <p>
+          Choosing the start and end points of a turnaround metric doesn't
+          just determine which dates go in a formula—it defines the boundaries
+          of the process being measured.
+        </p>
+
+        <p>
+          That matters most in workflows that cross organizational boundaries,
+          where a single number labeled "turnaround time" can quietly collapse
+          transmission, facility intake, and processing into one interval.
+          The resulting average is mathematically accurate and operationally
+          ambiguous.
+        </p>
+
+        <p>
+          If the goal is the patient's total retrieval journey, sent date is
+          the right start point. If the goal is comparing facility processing
+          performance, confirmed receipt is more meaningful. If transmission
+          failures are significant in their own right, they probably deserve
+          their own metric rather than being absorbed into another one.
+        </p>
+
+        <p class="insight-emphasis">
+          The first question isn't <em>what dates do we have</em>—it's
+          <em>what part of the workflow are we trying to understand.</em>
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 06 — OPERATIONAL IMPLICATION
+         Status-based → exception-based management
+         ======================================== -->
+
+    <section class="insight-article-section insight-article-section-alt">
+
+      <div class="insight-article-content">
+
+        <div class="insight-section-number">
+          03
+        </div>
+
+        <h2>
+          FROM STATUS-BASED TO EXCEPTION-BASED MANAGEMENT
+        </h2>
+
+        <p>
+          Once turnaround was defined and measured consistently, historical
+          averages became useful for more than retrospective reporting—they
+          gave context to active work.
+        </p>
+
+        <p>
+          A list of pending requests identifies unfinished work. It doesn't
+          identify work that needs attention.
+        </p>
+
+
+        <!-- EXCEPTION EXAMPLE -->
+
+        <div class="insight-comparison">
+
+          <div>
+
+            <span class="insight-comparison-label">
+              NORMAL
+            </span>
+
+            <p>
+              Three days pending at a facility that routinely takes five days.
+            </p>
+
+          </div>
+
+          <div>
+
+            <span class="insight-comparison-label">
+              EXCEPTION
+            </span>
+
+            <p>
+              Three days pending at a facility that normally returns records
+              in one or two days.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <p>
+          That shifts the operational question from
+          <em>which requests are pending</em> to
+          <em>which pending requests are behaving differently than expected.</em>
+        </p>
+
+        <p>
+          Historical turnaround becomes an intervention threshold—a reference
+          point for when normal waiting starts to look like an exception,
+          rather than a reason to treat every open request as equally actionable.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 07 — UPSTREAM DECISIONS
+         When downstream data changes upstream decisions
+         ======================================== -->
+
+    <section class="insight-article-section">
+
+      <div class="insight-article-content">
+
+        <div class="insight-section-number">
+          04
+        </div>
+
+        <h2>
+          WHEN DOWNSTREAM DATA CHANGES UPSTREAM DECISIONS
+        </h2>
+
+        <p>
+          Over time, facility turnaround data started informing more than
+          the retrieval queue.
+        </p>
+
+        <p>
+          During patient intake, the team would ask where a patient's records
+          or prior testing were located—and facility identity could then be
+          weighed against what was already known about that facility's
+          retrieval difficulty.
+        </p>
+
+        <p>
+          That context mattered because it wasn't static. When recruitment
+          needs required pursuing every potentially eligible patient, a
+          difficult facility was simply a necessary dependency to work through.
+        </p>
+
+        <p>
+          When recruitment targets allowed more flexibility, expected retrieval
+          difficulty could factor into how outreach effort was allocated.
+        </p>
+
+        <p class="insight-emphasis">
+          A metric built to describe past facility performance had started
+          to shape a real intake decision—not just report on retrieval after
+          the fact.
+        </p>
+
+        <p>
+          A downstream operational metric had become an upstream input.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 08 — ANALYTICAL FRAME
+         What the metric can be used for
+         ======================================== -->
+
+    <section class="insight-analytical-frame">
+
+      <div class="insight-article-content">
+
+        <p class="insight-section-label">
+          WHAT THE METRIC CAN DO
+        </p>
+
+        <div class="insight-frame-grid">
+
+          <div class="insight-frame-item">
+
+            <span>01</span>
+
+            <h3>
+              DESCRIBE PERFORMANCE
+            </h3>
+
+            <p>
+              Establish historical turnaround patterns by facility.
+            </p>
+
+          </div>
+
+
+          <div class="insight-frame-item">
+
+            <span>02</span>
+
+            <h3>
+              IDENTIFY EXCEPTIONS
+            </h3>
+
+            <p>
+              Surface pending requests behaving differently than expected.
+            </p>
+
+          </div>
+
+
+          <div class="insight-frame-item">
+
+            <span>03</span>
+
+            <h3>
+              PRIORITIZE FOLLOW-UP
+            </h3>
+
+            <p>
+              Direct operational attention toward requests that actually
+              warrant intervention.
+            </p>
+
+          </div>
+
+
+          <div class="insight-frame-item">
+
+            <span>04</span>
+
+            <h3>
+              INFORM UPSTREAM DECISIONS
+            </h3>
+
+            <p>
+              Use historical retrieval difficulty as context during intake
+              and outreach planning.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 09 — CLOSING OBSERVATION
+         The point
+         ======================================== -->
+
+    <section class="insight-closing">
+
+      <div class="insight-article-content">
+
+        <p class="insight-section-label">
+          &lt; CLOSING OBSERVATION
+        </p>
+
+        <h2>
+          THE POINT
+        </h2>
+
+        <p>
+          There's a difference between recording what happened and creating
+          information that changes what happens next.
+        </p>
+
+        <p>
+          Facility turnaround started as a way to understand retrieval
+          performance. Once patterns accumulated, it started identifying
+          exceptions, prioritizing follow-up, and informing intake decisions
+          it was never originally built for.
+        </p>
+
+        <p>
+          Healthcare operations generate enormous numbers of timestamps—
+          referrals, authorizations, requests, deliveries, appointments,
+          records received.
+        </p>
+
+        <p>
+          Calculating the difference between two of them is easy. The harder
+          work is deciding which events actually define the process, what the
+          resulting number attributes to each party in it, and whether it
+          helps anyone make a better decision.
+        </p>
+
+        <p class="insight-closing-line">
+          A useful metric should do more than count time.
+          It should make the workflow easier to see.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ========================================
+         ARTICLE 10 — ARTICLE FOOTER
+         Categories / related project / back to Insights
+         ======================================== -->
+
+    <section class="insight-article-footer">
+
+      <div class="insight-article-footer-inner">
+
+
+        <!-- FILED UNDER -->
+
+        <div class="insight-footer-group">
+
+          <p class="insight-footer-label">
+            FILED UNDER
+          </p>
+
+          <p>
+            OPERATIONS / MEDICAL RECORDS
+          </p>
+
+        </div>
+
+
+        <!-- RELATED PROJECT -->
+
+        <div class="insight-footer-group">
+
+          <p class="insight-footer-label">
+            RELATED PROJECT
+          </p>
+
+          <a href="clinical-trial-analytics.html">
+            Clinical Trial Patient Recruitment System →
+          </a>
+
+        </div>
+
+
+        <!-- BACK TO INSIGHTS -->
+
+        <div class="insight-footer-navigation">
+
+          <a href="insights.html">
+            ← ALL INSIGHTS
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ========================================
+       SITE FOOTER
+       Canonical footer
+       ======================================== -->
+
+  <footer class="site-footer">
+
+    <!-- FOOTER — BRAND -->
+
+    <div class="footer-brand-column">
+
+      <a class="footer-logo" href="index.html">
+        <img
+          src="images/hermeneia-logo.png"
+          alt="Hermeneia logo"
+        >
+      </a>
+
+    </div>
+
+
+    <!-- FOOTER — CONTACT -->
+
+    <div class="footer-contact-column">
+
+      <a
+        class="footer-contact-item"
+        href="mailto:hello@askhermeneia.com"
+      >
+        <span class="footer-contact-icon">✉</span>
+        <span>hello@askhermeneia.com</span>
+      </a>
+
+      <a
+        class="footer-contact-item"
+        href="https://www.linkedin.com/in/marilismarrero/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="images/linkedin-icon.png" alt="">
+        <span>LinkedIn</span>
+      </a>
+
+      <a
+        class="footer-contact-item"
+        href="https://github.com/hermeneia-consulting"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src="images/github-icon.png" alt="">
+        <span>GitHub</span>
+      </a>
+
+    </div>
+
+
+    <!-- FOOTER — PUBLICATION -->
+
+    <div class="footer-publication-column">
+
+      <p class="footer-publication-label">
+        THE HUMAN OVERRIDE
+      </p>
+
+      <p class="footer-publication-copy">
+        Healthcare AI, governance, and the human layer.
+      </p>
+
+      <div class="footer-newsletter">
+
+        <iframe
+          src="https://thehumanoverride.substack.com/embed"
+          width="480"
+          height="320"
+          style="border: 1px solid #EEE; background: white"
+          frameborder="0"
+          scrolling="no">
+        </iframe>
+
+      </div>
+
+    </div>
+
+
+    <!-- FOOTER — COPYRIGHT -->
+
+    <div class="footer-copyright">
+      © 2026 Hermeneia. All rights reserved.
+    </div>
+
+  </footer>
+
+</body>
+</html>
